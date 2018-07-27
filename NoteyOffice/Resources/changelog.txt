@@ -1,0 +1,53 @@
+
+Changelog for NoteyWrite 1.0.1.0 (first public release)
+-------------------------------------------------------
+
+- Commented the code
+- Added the Changelog Window
+- Added the About Dialog
+- Added a Fullscreen button/function
+- Made icons for many functions (Print, Exit, About, All Edit functions, All View functions)
+- Added a built-in Web-Browser (a feature from Notey)
+
+-------------------------------------------------------
+
+
+--! Unreleased !--
+
+Changelog for NoteyWrite 1.0.0.4
+-------------------------------------------------------
+- Added all View functions
+- Added a system preventing the User from closing a window accidently with unsaved changes
+- Renamed NoteyOffice to NoteyWrite, because NoteyOffice is misleading
+
+-------------------------------------------------------
+
+
+Changelog for NoteyOffice 1.0.0.3
+-------------------------------------------------------
+- Added the Bold, Italic, Underlined, Strikethrough options
+- Added all Edit functions
+
+-------------------------------------------------------
+
+
+Changelog for NoteyOffice 1.0.0.2
+-------------------------------------------------------
+- Added the Alignment functions
+- Added the ability to Print
+
+-------------------------------------------------------
+
+
+Changelog for NoteyOffice 1.0.0.1
+-------------------------------------------------------
+- Added the Font-Size & Font-Family formatting options
+- Added the ability to Open/Save to TXT files, and if possible, save/open other formats
+
+-------------------------------------------------------
+
+
+Changelog for NoteyOffice 1.0.0.0
+-------------------------------------------------------
+- Added the ability to Open/Save/Create a document (RTF only)
+- Added a Exit button
