@@ -32,6 +32,8 @@ Partial Class Form1
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.bPageSetup = New System.Windows.Forms.ToolStripMenuItem()
         Me.bPrint = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
+        Me.bWebBrowser = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
         Me.bExit = New System.Windows.Forms.ToolStripMenuItem()
         Me.bAbout = New System.Windows.Forms.ToolStripMenuItem()
@@ -49,6 +51,9 @@ Partial Class Form1
         Me.bZoomOut = New System.Windows.Forms.ToolStripMenuItem()
         Me.bResetZoom = New System.Windows.Forms.ToolStripMenuItem()
         Me.bZoomIn = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
+        Me.bWordWrap = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.bFullscreen = New System.Windows.Forms.ToolStripMenuItem()
         Me.ofdOpen = New System.Windows.Forms.OpenFileDialog()
         Me.sfdSave = New System.Windows.Forms.SaveFileDialog()
@@ -73,8 +78,6 @@ Partial Class Form1
         Me.tsbStrikethrough = New System.Windows.Forms.ToolStripButton()
         Me.pdPrint = New System.Drawing.Printing.PrintDocument()
         Me.rtbMain = New NoteyOffice.RichTextBoxPrint.RichTextBoxPrintCtrl()
-        Me.bWebBrowser = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator7 = New System.Windows.Forms.ToolStripSeparator()
         Me.tsTools.SuspendLayout()
         Me.tsFormatting.SuspendLayout()
         Me.SuspendLayout()
@@ -102,72 +105,83 @@ Partial Class Form1
         '
         Me.bNew.Image = CType(resources.GetObject("bNew.Image"), System.Drawing.Image)
         Me.bNew.Name = "bNew"
-        Me.bNew.Size = New System.Drawing.Size(180, 22)
+        Me.bNew.Size = New System.Drawing.Size(143, 22)
         Me.bNew.Text = "New"
         '
         'bOpen
         '
         Me.bOpen.Image = CType(resources.GetObject("bOpen.Image"), System.Drawing.Image)
         Me.bOpen.Name = "bOpen"
-        Me.bOpen.Size = New System.Drawing.Size(180, 22)
+        Me.bOpen.Size = New System.Drawing.Size(143, 22)
         Me.bOpen.Text = "Open..."
         '
         'bSave
         '
         Me.bSave.Image = CType(resources.GetObject("bSave.Image"), System.Drawing.Image)
         Me.bSave.Name = "bSave"
-        Me.bSave.Size = New System.Drawing.Size(180, 22)
+        Me.bSave.Size = New System.Drawing.Size(143, 22)
         Me.bSave.Text = "Save"
         '
         'bSaveAs
         '
         Me.bSaveAs.Image = CType(resources.GetObject("bSaveAs.Image"), System.Drawing.Image)
         Me.bSaveAs.Name = "bSaveAs"
-        Me.bSaveAs.Size = New System.Drawing.Size(180, 22)
+        Me.bSaveAs.Size = New System.Drawing.Size(143, 22)
         Me.bSaveAs.Text = "Save As..."
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(140, 6)
         '
         'bPageSetup
         '
         Me.bPageSetup.Name = "bPageSetup"
-        Me.bPageSetup.Size = New System.Drawing.Size(180, 22)
+        Me.bPageSetup.Size = New System.Drawing.Size(143, 22)
         Me.bPageSetup.Text = "Page Setup..."
         '
         'bPrint
         '
         Me.bPrint.Image = CType(resources.GetObject("bPrint.Image"), System.Drawing.Image)
         Me.bPrint.Name = "bPrint"
-        Me.bPrint.Size = New System.Drawing.Size(180, 22)
+        Me.bPrint.Size = New System.Drawing.Size(143, 22)
         Me.bPrint.Text = "Print... "
+        '
+        'ToolStripSeparator7
+        '
+        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(140, 6)
+        '
+        'bWebBrowser
+        '
+        Me.bWebBrowser.Name = "bWebBrowser"
+        Me.bWebBrowser.Size = New System.Drawing.Size(143, 22)
+        Me.bWebBrowser.Text = "Web Browser"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(140, 6)
         '
         'bExit
         '
         Me.bExit.Image = CType(resources.GetObject("bExit.Image"), System.Drawing.Image)
         Me.bExit.Name = "bExit"
-        Me.bExit.Size = New System.Drawing.Size(180, 22)
+        Me.bExit.Size = New System.Drawing.Size(143, 22)
         Me.bExit.Text = "Exit"
         '
         'bAbout
         '
         Me.bAbout.Image = CType(resources.GetObject("bAbout.Image"), System.Drawing.Image)
         Me.bAbout.Name = "bAbout"
-        Me.bAbout.Size = New System.Drawing.Size(180, 22)
+        Me.bAbout.Size = New System.Drawing.Size(143, 22)
         Me.bAbout.Text = "About"
         '
         'bChangelog
         '
         Me.bChangelog.Image = CType(resources.GetObject("bChangelog.Image"), System.Drawing.Image)
         Me.bChangelog.Name = "bChangelog"
-        Me.bChangelog.Size = New System.Drawing.Size(180, 22)
+        Me.bChangelog.Size = New System.Drawing.Size(143, 22)
         Me.bChangelog.Text = "Changelog"
         '
         'ddbEdit
@@ -244,7 +258,7 @@ Partial Class Form1
         'ddbView
         '
         Me.ddbView.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ddbView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bZoomOut, Me.bResetZoom, Me.bZoomIn, Me.bFullscreen})
+        Me.ddbView.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bZoomOut, Me.bResetZoom, Me.bZoomIn, Me.ToolStripSeparator9, Me.bWordWrap, Me.ToolStripSeparator8, Me.bFullscreen})
         Me.ddbView.Image = CType(resources.GetObject("ddbView.Image"), System.Drawing.Image)
         Me.ddbView.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbView.Name = "ddbView"
@@ -255,28 +269,47 @@ Partial Class Form1
         '
         Me.bZoomOut.Image = CType(resources.GetObject("bZoomOut.Image"), System.Drawing.Image)
         Me.bZoomOut.Name = "bZoomOut"
-        Me.bZoomOut.Size = New System.Drawing.Size(137, 22)
+        Me.bZoomOut.Size = New System.Drawing.Size(180, 22)
         Me.bZoomOut.Text = "Zoom out"
         '
         'bResetZoom
         '
         Me.bResetZoom.Image = CType(resources.GetObject("bResetZoom.Image"), System.Drawing.Image)
         Me.bResetZoom.Name = "bResetZoom"
-        Me.bResetZoom.Size = New System.Drawing.Size(137, 22)
+        Me.bResetZoom.Size = New System.Drawing.Size(180, 22)
         Me.bResetZoom.Text = "Reset Zoom"
         '
         'bZoomIn
         '
         Me.bZoomIn.Image = CType(resources.GetObject("bZoomIn.Image"), System.Drawing.Image)
         Me.bZoomIn.Name = "bZoomIn"
-        Me.bZoomIn.Size = New System.Drawing.Size(137, 22)
+        Me.bZoomIn.Size = New System.Drawing.Size(180, 22)
         Me.bZoomIn.Text = "Zoom in"
+        '
+        'ToolStripSeparator9
+        '
+        Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(177, 6)
+        '
+        'bWordWrap
+        '
+        Me.bWordWrap.Checked = True
+        Me.bWordWrap.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.bWordWrap.Image = CType(resources.GetObject("bWordWrap.Image"), System.Drawing.Image)
+        Me.bWordWrap.Name = "bWordWrap"
+        Me.bWordWrap.Size = New System.Drawing.Size(180, 22)
+        Me.bWordWrap.Text = "Word Wrap"
+        '
+        'ToolStripSeparator8
+        '
+        Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(177, 6)
         '
         'bFullscreen
         '
         Me.bFullscreen.Image = CType(resources.GetObject("bFullscreen.Image"), System.Drawing.Image)
         Me.bFullscreen.Name = "bFullscreen"
-        Me.bFullscreen.Size = New System.Drawing.Size(137, 22)
+        Me.bFullscreen.Size = New System.Drawing.Size(180, 22)
         Me.bFullscreen.Text = "Fullscreen"
         '
         'ofdOpen
@@ -444,17 +477,6 @@ Partial Class Form1
         Me.rtbMain.TabIndex = 4
         Me.rtbMain.Text = ""
         '
-        'bWebBrowser
-        '
-        Me.bWebBrowser.Name = "bWebBrowser"
-        Me.bWebBrowser.Size = New System.Drawing.Size(180, 22)
-        Me.bWebBrowser.Text = "Web Browser"
-        '
-        'ToolStripSeparator7
-        '
-        Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(177, 6)
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -527,4 +549,7 @@ Partial Class Form1
     Friend WithEvents bChangelog As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator7 As ToolStripSeparator
     Friend WithEvents bWebBrowser As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
+    Friend WithEvents bWordWrap As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
 End Class

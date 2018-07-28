@@ -1,9 +1,10 @@
 ﻿Public Class SaveDialog
     Private Sub bSave_Click(sender As Object, e As EventArgs) Handles bSave.Click
-        If Not Form1.sfdSave.FileName = Nothing Then
+        ' Show the save dialog and call the save function
+        If Form1.alreadySaved Then
             Form1.save(Form1.currentlyOpen)
         Else
-            If Form1.sfdSave.ShowDialog() = DialogResult.OK Then
+            If Form1.sfdSave.ShowDialog = DialogResult.OK Then
                 Form1.save(Form1.sfdSave.FileName)
             End If
         End If

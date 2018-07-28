@@ -7,7 +7,7 @@ Public Class Form1
     Dim extension As String
     Dim sMsg As String = ""
     Private isInitialized As Boolean
-    Dim alreadySaved As Boolean = False
+    Public alreadySaved As Boolean = False
     Public IsModified As Boolean = False
     Public currentlyOpen As String
     Private checkPrint As Integer
@@ -68,6 +68,7 @@ Public Class Form1
     Private Sub PrintDocument1_BeginPrint(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintEventArgs) Handles pdPrint.BeginPrint
         checkPrint = 0
     End Sub
+
     Public Function open(ByVal file As String, ByVal rtb As RichTextBox)
         ' Check for a valid extension in the file being opened
         If GetExtension(file) = ".txt" Then
@@ -183,7 +184,14 @@ Public Class Form1
     End Sub
 
     Private Sub bExit_Click(sender As Object, e As EventArgs) Handles bExit.Click
-        Application.Exit()
+        ' Check if the current file has been modified, if so show a dialog asking if the user wants to save thier work
+        If IsModified Then
+            If SaveDialog.ShowDialog() <> DialogResult.Cancel Then
+                Application.Exit()
+            End If
+        Else
+            Application.Exit()
+        End If
     End Sub
 
     Private Sub Form1_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
@@ -191,6 +199,8 @@ Public Class Form1
         If IsModified Then
             If SaveDialog.ShowDialog() = DialogResult.Cancel Then
                 e.Cancel = True
+            Else
+                Application.Exit()
             End If
         End If
     End Sub
@@ -202,7 +212,7 @@ Public Class Form1
         sDocument.rtbMain.Text = ""
     End Sub
 
-    Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs)
+    Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs) Handles rtbMain.TextChanged
         ' If the text gets changed, the isModified variable sets to True
         IsModified = True
     End Sub
@@ -422,5 +432,11 @@ Public Class Form1
     Private Sub bWebBrowser_Click(sender As Object, e As EventArgs) Handles bWebBrowser.Click
         ' Open the Embedded Web Browser
         WebBrowser.Show()
+    End Sub
+
+    Private Sub bWordWrap_Click(sender As Object, e As EventArgs) Handles bWordWrap.Click
+        ' Toggle the "Checked" state of the button, then turf on/off word wrap
+        bWordWrap.Checked = Not bWordWrap.Checked
+        rtbMain.WordWrap = bWordWrap.Checked
     End Sub
 End Class
