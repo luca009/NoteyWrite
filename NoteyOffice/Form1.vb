@@ -439,4 +439,17 @@ Public Class Form1
         bWordWrap.Checked = Not bWordWrap.Checked
         rtbMain.WordWrap = bWordWrap.Checked
     End Sub
+
+    Private Sub bFindReplace_Click(sender As Object, e As EventArgs) Handles bFindReplace.Click
+        FindReplace.Show()
+    End Sub
+
+    Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
+        If keyData = (Keys.Control Or Keys.F) Then
+            FindReplace.Show()
+            Return True
+        End If
+
+        Return MyBase.ProcessCmdKey(msg, keyData)
+    End Function
 End Class

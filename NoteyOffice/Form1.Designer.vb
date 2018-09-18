@@ -42,6 +42,8 @@ Partial Class Form1
         Me.bUndo = New System.Windows.Forms.ToolStripMenuItem()
         Me.bRedo = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.bFindReplace = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator10 = New System.Windows.Forms.ToolStripSeparator()
         Me.bCut = New System.Windows.Forms.ToolStripMenuItem()
         Me.bCopy = New System.Windows.Forms.ToolStripMenuItem()
         Me.bPaste = New System.Windows.Forms.ToolStripMenuItem()
@@ -105,89 +107,89 @@ Partial Class Form1
         '
         Me.bNew.Image = CType(resources.GetObject("bNew.Image"), System.Drawing.Image)
         Me.bNew.Name = "bNew"
-        Me.bNew.Size = New System.Drawing.Size(143, 22)
+        Me.bNew.Size = New System.Drawing.Size(180, 22)
         Me.bNew.Text = "New"
         '
         'bOpen
         '
         Me.bOpen.Image = CType(resources.GetObject("bOpen.Image"), System.Drawing.Image)
         Me.bOpen.Name = "bOpen"
-        Me.bOpen.Size = New System.Drawing.Size(143, 22)
+        Me.bOpen.Size = New System.Drawing.Size(180, 22)
         Me.bOpen.Text = "Open..."
         '
         'bSave
         '
         Me.bSave.Image = CType(resources.GetObject("bSave.Image"), System.Drawing.Image)
         Me.bSave.Name = "bSave"
-        Me.bSave.Size = New System.Drawing.Size(143, 22)
+        Me.bSave.Size = New System.Drawing.Size(180, 22)
         Me.bSave.Text = "Save"
         '
         'bSaveAs
         '
         Me.bSaveAs.Image = CType(resources.GetObject("bSaveAs.Image"), System.Drawing.Image)
         Me.bSaveAs.Name = "bSaveAs"
-        Me.bSaveAs.Size = New System.Drawing.Size(143, 22)
+        Me.bSaveAs.Size = New System.Drawing.Size(180, 22)
         Me.bSaveAs.Text = "Save As..."
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(140, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
         '
         'bPageSetup
         '
         Me.bPageSetup.Name = "bPageSetup"
-        Me.bPageSetup.Size = New System.Drawing.Size(143, 22)
+        Me.bPageSetup.Size = New System.Drawing.Size(180, 22)
         Me.bPageSetup.Text = "Page Setup..."
         '
         'bPrint
         '
         Me.bPrint.Image = CType(resources.GetObject("bPrint.Image"), System.Drawing.Image)
         Me.bPrint.Name = "bPrint"
-        Me.bPrint.Size = New System.Drawing.Size(143, 22)
+        Me.bPrint.Size = New System.Drawing.Size(180, 22)
         Me.bPrint.Text = "Print... "
         '
         'ToolStripSeparator7
         '
         Me.ToolStripSeparator7.Name = "ToolStripSeparator7"
-        Me.ToolStripSeparator7.Size = New System.Drawing.Size(140, 6)
+        Me.ToolStripSeparator7.Size = New System.Drawing.Size(177, 6)
         '
         'bWebBrowser
         '
         Me.bWebBrowser.Name = "bWebBrowser"
-        Me.bWebBrowser.Size = New System.Drawing.Size(143, 22)
+        Me.bWebBrowser.Size = New System.Drawing.Size(180, 22)
         Me.bWebBrowser.Text = "Web Browser"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(140, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
         '
         'bExit
         '
         Me.bExit.Image = CType(resources.GetObject("bExit.Image"), System.Drawing.Image)
         Me.bExit.Name = "bExit"
-        Me.bExit.Size = New System.Drawing.Size(143, 22)
+        Me.bExit.Size = New System.Drawing.Size(180, 22)
         Me.bExit.Text = "Exit"
         '
         'bAbout
         '
         Me.bAbout.Image = CType(resources.GetObject("bAbout.Image"), System.Drawing.Image)
         Me.bAbout.Name = "bAbout"
-        Me.bAbout.Size = New System.Drawing.Size(143, 22)
+        Me.bAbout.Size = New System.Drawing.Size(180, 22)
         Me.bAbout.Text = "About"
         '
         'bChangelog
         '
         Me.bChangelog.Image = CType(resources.GetObject("bChangelog.Image"), System.Drawing.Image)
         Me.bChangelog.Name = "bChangelog"
-        Me.bChangelog.Size = New System.Drawing.Size(143, 22)
+        Me.bChangelog.Size = New System.Drawing.Size(180, 22)
         Me.bChangelog.Text = "Changelog"
         '
         'ddbEdit
         '
         Me.ddbEdit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ddbEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bUndo, Me.bRedo, Me.ToolStripSeparator3, Me.bCut, Me.bCopy, Me.bPaste, Me.bDelete, Me.bSelectAll})
+        Me.ddbEdit.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bUndo, Me.bRedo, Me.ToolStripSeparator3, Me.bFindReplace, Me.ToolStripSeparator10, Me.bCut, Me.bCopy, Me.bPaste, Me.bDelete, Me.bSelectAll})
         Me.ddbEdit.Image = CType(resources.GetObject("ddbEdit.Image"), System.Drawing.Image)
         Me.ddbEdit.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbEdit.Name = "ddbEdit"
@@ -199,7 +201,7 @@ Partial Class Form1
         Me.bUndo.Image = CType(resources.GetObject("bUndo.Image"), System.Drawing.Image)
         Me.bUndo.Name = "bUndo"
         Me.bUndo.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.bUndo.Size = New System.Drawing.Size(162, 22)
+        Me.bUndo.Size = New System.Drawing.Size(180, 22)
         Me.bUndo.Text = "Undo"
         '
         'bRedo
@@ -207,20 +209,32 @@ Partial Class Form1
         Me.bRedo.Image = CType(resources.GetObject("bRedo.Image"), System.Drawing.Image)
         Me.bRedo.Name = "bRedo"
         Me.bRedo.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.bRedo.Size = New System.Drawing.Size(162, 22)
+        Me.bRedo.Size = New System.Drawing.Size(180, 22)
         Me.bRedo.Text = "Redo"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(159, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        '
+        'bFindReplace
+        '
+        Me.bFindReplace.Image = CType(resources.GetObject("bFindReplace.Image"), System.Drawing.Image)
+        Me.bFindReplace.Name = "bFindReplace"
+        Me.bFindReplace.Size = New System.Drawing.Size(180, 22)
+        Me.bFindReplace.Text = "Find and Replace"
+        '
+        'ToolStripSeparator10
+        '
+        Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(177, 6)
         '
         'bCut
         '
         Me.bCut.Image = CType(resources.GetObject("bCut.Image"), System.Drawing.Image)
         Me.bCut.Name = "bCut"
         Me.bCut.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.bCut.Size = New System.Drawing.Size(162, 22)
+        Me.bCut.Size = New System.Drawing.Size(180, 22)
         Me.bCut.Text = "Cut"
         '
         'bCopy
@@ -228,7 +242,7 @@ Partial Class Form1
         Me.bCopy.Image = CType(resources.GetObject("bCopy.Image"), System.Drawing.Image)
         Me.bCopy.Name = "bCopy"
         Me.bCopy.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.bCopy.Size = New System.Drawing.Size(162, 22)
+        Me.bCopy.Size = New System.Drawing.Size(180, 22)
         Me.bCopy.Text = "Copy"
         '
         'bPaste
@@ -236,7 +250,7 @@ Partial Class Form1
         Me.bPaste.Image = CType(resources.GetObject("bPaste.Image"), System.Drawing.Image)
         Me.bPaste.Name = "bPaste"
         Me.bPaste.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.bPaste.Size = New System.Drawing.Size(162, 22)
+        Me.bPaste.Size = New System.Drawing.Size(180, 22)
         Me.bPaste.Text = "Paste"
         '
         'bDelete
@@ -244,7 +258,7 @@ Partial Class Form1
         Me.bDelete.Image = CType(resources.GetObject("bDelete.Image"), System.Drawing.Image)
         Me.bDelete.Name = "bDelete"
         Me.bDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete
-        Me.bDelete.Size = New System.Drawing.Size(162, 22)
+        Me.bDelete.Size = New System.Drawing.Size(180, 22)
         Me.bDelete.Text = "Delete"
         '
         'bSelectAll
@@ -252,7 +266,7 @@ Partial Class Form1
         Me.bSelectAll.Image = CType(resources.GetObject("bSelectAll.Image"), System.Drawing.Image)
         Me.bSelectAll.Name = "bSelectAll"
         Me.bSelectAll.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.bSelectAll.Size = New System.Drawing.Size(162, 22)
+        Me.bSelectAll.Size = New System.Drawing.Size(180, 22)
         Me.bSelectAll.Text = "Select all"
         '
         'ddbView
@@ -540,7 +554,6 @@ Partial Class Form1
     Friend WithEvents tsbItalic As ToolStripButton
     Friend WithEvents tsbUnderline As ToolStripButton
     Friend WithEvents tsbStrikethrough As ToolStripButton
-    Friend WithEvents rtbMain As NoteyOffice.RichTextBoxPrint.RichTextBoxPrintCtrl
     Friend WithEvents bZoomOut As ToolStripMenuItem
     Friend WithEvents bZoomIn As ToolStripMenuItem
     Friend WithEvents bResetZoom As ToolStripMenuItem
@@ -552,4 +565,7 @@ Partial Class Form1
     Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
     Friend WithEvents bWordWrap As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
+    Friend WithEvents bFindReplace As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator10 As ToolStripSeparator
+    Public WithEvents rtbMain As RichTextBoxPrint.RichTextBoxPrintCtrl
 End Class
