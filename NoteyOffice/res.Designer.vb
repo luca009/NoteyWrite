@@ -65,24 +65,22 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 
-        '''Changelog for NoteyWrite 1.0.1.0 (first public release)
+        '''  Looks up a localized string similar to Changelog for NoteyWrite 1.0.1.3
+        '''-------------------------------------------------------
+        '''- Added a status bar.
+        '''
+        '''
+        '''Changelog for NoteyWrite 1.0.1.2
+        '''-------------------------------------------------------
+        '''- Redesigned the Logo for NoteyWrite
+        '''- Added a Find &amp; Replace dialog
         '''-------------------------------------------------------
         '''
-        '''- Commented the code
-        '''- Added the Changelog Window
-        '''- Added the About Dialog
-        '''- Added a logging system (for debugging)
-        '''- Added a Fullscreen button/function
-        '''- Made icons for many functions (Print, Exit, About, All Edit functions, All View functions)
-        '''- Added a built-in Web-Browser (a feature from Notey)
-        '''
+        '''Changelog for NoteyWrite 1.0.1.1
         '''-------------------------------------------------------
-        '''
-        '''
-        '''--! Unreleased !--
-        '''
-        '''Ch [rest of string was truncated]&quot;;.
+        '''- Added a Word Wrap toggle.
+        '''- Fixed minor bugs (more on GitHub)
+        '''---------------- [rest of string was truncated]&quot;;.
         '''</summary>
         Friend Shared ReadOnly Property changelog() As String
             Get

@@ -1,19 +1,18 @@
+Changelog for NoteyWrite 1.0.1.3
+-------------------------------------------------------
+- Added a status bar.
+
 
 Changelog for NoteyWrite 1.0.1.2
 -------------------------------------------------------
-- Added a "Find and Replace" dialog
-- Redesigned the NoteyWrite logo
-- Added a missing entry in the Changelog (1.0.1.1)
+- Redesigned the Logo for NoteyWrite
+- Added a Find & Replace dialog
 -------------------------------------------------------
 
 Changelog for NoteyWrite 1.0.1.1
 -------------------------------------------------------
-- Bug fixes
-	- Fixed a bug that wouldn't let the "Save before exiting" dialog show.
-	- Fixed a error that would appear if you clicked "Save" on the "Save before exiting" dialog, before saving once
-
-- New features
-	- Added a toggle for Word Wrap
+- Added a Word Wrap toggle.
+- Fixed minor bugs (more on GitHub)
 -------------------------------------------------------
 
 Changelog for NoteyWrite 1.0.1.0 (first public release)

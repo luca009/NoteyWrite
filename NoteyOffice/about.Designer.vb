@@ -59,9 +59,9 @@ Partial Class about
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(38, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(126, 13)
+        Me.Label2.Size = New System.Drawing.Size(135, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "The free Word Processor"
+        Me.Label2.Text = "Designed to be lightweight."
         '
         'Label3
         '
@@ -87,9 +87,9 @@ Partial Class about
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(13, 110)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(153, 13)
+        Me.Label5.Size = New System.Drawing.Size(177, 13)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Version 1.0.1.2, 18th September 2018"
+        Me.Label5.Text = "Version 1.0.1.3, 2st November 2018"
         '
         'llMore
         '

@@ -205,7 +205,6 @@
   <ItemGroup>
     <Content Include="Logo.ico" />
     <None Include="Resources\changelog.txt" />
-    <Content Include="TextTemplate.ico" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="RegisterControlLib">
