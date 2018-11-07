@@ -501,4 +501,58 @@ Public Class Form1
             rtbMain.SelectionColor = cdColor.Color
         End If
     End Sub
+
+    Private Sub rtbMain_SelectionChanged(sender As Object, e As EventArgs) Handles rtbMain.SelectionChanged
+        If rtbMain.SelectionAlignment <> vbNull Then
+            ' If statement for the Alignment of the text
+            If rtbMain.SelectionAlignment = HorizontalAlignment.Left Then
+                ' Activate Align to left button and disable all others
+                tsbAlignCenter.Checked = False
+                tsbAlignRight.Checked = False
+                tsbAlignLeft.Checked = True
+            Else
+                ' Activate Align to center button and disable all others
+                tsbAlignCenter.Checked = True
+                tsbAlignRight.Checked = False
+                tsbAlignLeft.Checked = False
+            End If
+        Else
+            ' Activate Align to right button and disable all others
+            tsbAlignCenter.Checked = False
+            tsbAlignRight.Checked = True
+            tsbAlignLeft.Checked = False
+        End If
+
+        '         Weird VB doesn't let me put <> here
+        '                         vvv
+        If rtbMain.SelectionFont IsNot Nothing Then
+            ' Checks if the text is bold, italic, etc.
+            tsbBold.Checked = False
+            tsbItalic.Checked = False
+            tsbUnderline.Checked = False
+            tsbStrikethrough.Checked = False
+
+            If rtbMain.SelectionFont.Bold Then
+                tsbBold.Checked = True
+            End If
+
+            If rtbMain.SelectionFont.Italic Then
+                tsbItalic.Checked = True
+            End If
+
+            If rtbMain.SelectionFont.Underline Then
+                tsbUnderline.Checked = True
+            End If
+
+            If rtbMain.SelectionFont.Strikeout Then
+                tsbStrikethrough.Checked = True
+            End If
+
+            If cbFont.Text <> rtbMain.SelectionFont.OriginalFontName Then
+                cbFont.Text = rtbMain.SelectionFont.OriginalFontName
+            End If
+
+            cbFontSize.Text = rtbMain.SelectionFont.Size
+        End If
+    End Sub
 End Class

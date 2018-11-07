@@ -82,12 +82,12 @@ Partial Class Form1
         Me.bTColor = New System.Windows.Forms.ToolStripButton()
         Me.pdPrint = New System.Drawing.Printing.PrintDocument()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lLength = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.cdColor = New System.Windows.Forms.ColorDialog()
         Me.rtbMain = New NoteyOffice.RichTextBoxPrint.RichTextBoxPrintCtrl()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.tsTools.SuspendLayout()
         Me.tsFormatting.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
@@ -210,7 +210,7 @@ Partial Class Form1
         Me.bUndo.Image = CType(resources.GetObject("bUndo.Image"), System.Drawing.Image)
         Me.bUndo.Name = "bUndo"
         Me.bUndo.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.bUndo.Size = New System.Drawing.Size(180, 22)
+        Me.bUndo.Size = New System.Drawing.Size(164, 22)
         Me.bUndo.Text = "Undo"
         '
         'bRedo
@@ -218,32 +218,32 @@ Partial Class Form1
         Me.bRedo.Image = CType(resources.GetObject("bRedo.Image"), System.Drawing.Image)
         Me.bRedo.Name = "bRedo"
         Me.bRedo.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.bRedo.Size = New System.Drawing.Size(180, 22)
+        Me.bRedo.Size = New System.Drawing.Size(164, 22)
         Me.bRedo.Text = "Redo"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(161, 6)
         '
         'bFindReplace
         '
         Me.bFindReplace.Image = CType(resources.GetObject("bFindReplace.Image"), System.Drawing.Image)
         Me.bFindReplace.Name = "bFindReplace"
-        Me.bFindReplace.Size = New System.Drawing.Size(180, 22)
+        Me.bFindReplace.Size = New System.Drawing.Size(164, 22)
         Me.bFindReplace.Text = "Find and Replace"
         '
         'ToolStripSeparator10
         '
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
-        Me.ToolStripSeparator10.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(161, 6)
         '
         'bCut
         '
         Me.bCut.Image = CType(resources.GetObject("bCut.Image"), System.Drawing.Image)
         Me.bCut.Name = "bCut"
         Me.bCut.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.bCut.Size = New System.Drawing.Size(180, 22)
+        Me.bCut.Size = New System.Drawing.Size(164, 22)
         Me.bCut.Text = "Cut"
         '
         'bCopy
@@ -251,7 +251,7 @@ Partial Class Form1
         Me.bCopy.Image = CType(resources.GetObject("bCopy.Image"), System.Drawing.Image)
         Me.bCopy.Name = "bCopy"
         Me.bCopy.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.bCopy.Size = New System.Drawing.Size(180, 22)
+        Me.bCopy.Size = New System.Drawing.Size(164, 22)
         Me.bCopy.Text = "Copy"
         '
         'bPaste
@@ -259,7 +259,7 @@ Partial Class Form1
         Me.bPaste.Image = CType(resources.GetObject("bPaste.Image"), System.Drawing.Image)
         Me.bPaste.Name = "bPaste"
         Me.bPaste.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.bPaste.Size = New System.Drawing.Size(180, 22)
+        Me.bPaste.Size = New System.Drawing.Size(164, 22)
         Me.bPaste.Text = "Paste"
         '
         'bDelete
@@ -267,7 +267,7 @@ Partial Class Form1
         Me.bDelete.Image = CType(resources.GetObject("bDelete.Image"), System.Drawing.Image)
         Me.bDelete.Name = "bDelete"
         Me.bDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete
-        Me.bDelete.Size = New System.Drawing.Size(180, 22)
+        Me.bDelete.Size = New System.Drawing.Size(164, 22)
         Me.bDelete.Text = "Delete"
         '
         'bSelectAll
@@ -275,7 +275,7 @@ Partial Class Form1
         Me.bSelectAll.Image = CType(resources.GetObject("bSelectAll.Image"), System.Drawing.Image)
         Me.bSelectAll.Name = "bSelectAll"
         Me.bSelectAll.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.bSelectAll.Size = New System.Drawing.Size(180, 22)
+        Me.bSelectAll.Size = New System.Drawing.Size(164, 22)
         Me.bSelectAll.Text = "Select all"
         '
         'ddbView
@@ -292,27 +292,27 @@ Partial Class Form1
         '
         Me.bZoomOut.Image = CType(resources.GetObject("bZoomOut.Image"), System.Drawing.Image)
         Me.bZoomOut.Name = "bZoomOut"
-        Me.bZoomOut.Size = New System.Drawing.Size(180, 22)
+        Me.bZoomOut.Size = New System.Drawing.Size(137, 22)
         Me.bZoomOut.Text = "Zoom out"
         '
         'bResetZoom
         '
         Me.bResetZoom.Image = CType(resources.GetObject("bResetZoom.Image"), System.Drawing.Image)
         Me.bResetZoom.Name = "bResetZoom"
-        Me.bResetZoom.Size = New System.Drawing.Size(180, 22)
+        Me.bResetZoom.Size = New System.Drawing.Size(137, 22)
         Me.bResetZoom.Text = "Reset Zoom"
         '
         'bZoomIn
         '
         Me.bZoomIn.Image = CType(resources.GetObject("bZoomIn.Image"), System.Drawing.Image)
         Me.bZoomIn.Name = "bZoomIn"
-        Me.bZoomIn.Size = New System.Drawing.Size(180, 22)
+        Me.bZoomIn.Size = New System.Drawing.Size(137, 22)
         Me.bZoomIn.Text = "Zoom in"
         '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
-        Me.ToolStripSeparator9.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(134, 6)
         '
         'bWordWrap
         '
@@ -320,19 +320,19 @@ Partial Class Form1
         Me.bWordWrap.CheckState = System.Windows.Forms.CheckState.Checked
         Me.bWordWrap.Image = CType(resources.GetObject("bWordWrap.Image"), System.Drawing.Image)
         Me.bWordWrap.Name = "bWordWrap"
-        Me.bWordWrap.Size = New System.Drawing.Size(180, 22)
+        Me.bWordWrap.Size = New System.Drawing.Size(137, 22)
         Me.bWordWrap.Text = "Word Wrap"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(134, 6)
         '
         'bFullscreen
         '
         Me.bFullscreen.Image = CType(resources.GetObject("bFullscreen.Image"), System.Drawing.Image)
         Me.bFullscreen.Name = "bFullscreen"
-        Me.bFullscreen.Size = New System.Drawing.Size(180, 22)
+        Me.bFullscreen.Size = New System.Drawing.Size(137, 22)
         Me.bFullscreen.Text = "Fullscreen"
         '
         'ofdOpen
@@ -518,12 +518,19 @@ Partial Class Form1
         Me.StatusStrip1.TabIndex = 5
         Me.StatusStrip1.Text = "StatusStrip1"
         '
+        'ToolStripStatusLabel2
+        '
+        Me.ToolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
+        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
+        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(69, 17)
+        Me.ToolStripStatusLabel2.Text = "Last Action:"
+        '
         'lStatus
         '
         Me.lStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.lStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.lStatus.Name = "lStatus"
-        Me.lStatus.Size = New System.Drawing.Size(296, 17)
+        Me.lStatus.Size = New System.Drawing.Size(265, 17)
         Me.lStatus.Spring = True
         Me.lStatus.Text = "None"
         '
@@ -539,24 +546,18 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.1.3"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.1.4"
         '
         'rtbMain
         '
         Me.rtbMain.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtbMain.Location = New System.Drawing.Point(0, 50)
         Me.rtbMain.Name = "rtbMain"
         Me.rtbMain.Size = New System.Drawing.Size(572, 328)
         Me.rtbMain.TabIndex = 6
         Me.rtbMain.Text = ""
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(69, 17)
-        Me.ToolStripStatusLabel2.Text = "Last Action:"
         '
         'Form1
         '

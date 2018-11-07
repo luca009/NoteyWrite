@@ -1,7 +1,15 @@
+Changelog for NoteyWrite 1.0.1.4
+-------------------------------------------------------
+- Made the Format buttons change automaticlly, when selecting text.
+- Fixed up holes in the changelog.
+-------------------------------------------------------
+
 Changelog for NoteyWrite 1.0.1.3
 -------------------------------------------------------
 - Added a status bar.
-
+- Added a option to change the Text Color.
+- Made minor style changes.
+-------------------------------------------------------
 
 Changelog for NoteyWrite 1.0.1.2
 -------------------------------------------------------
