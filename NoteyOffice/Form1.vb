@@ -75,19 +75,19 @@ Public Class Form1
             Try
                 rtb.LoadFile(file, RichTextBoxStreamType.PlainText)
             Catch ex As Exception
-                MessageBox.Show("Unexpected Error! Description: " & ex.Message & " Error Code: " & ex.GetHashCode(), "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         ElseIf GetExtension(file) = ".rtf" Then
             Try
                 rtb.LoadFile(file)
             Catch ex As Exception
-                MessageBox.Show("Unexpected Error! Description: " & ex.Message & " Error Code: " & ex.GetHashCode(), "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         Else
             Try
                 rtb.LoadFile(file, RichTextBoxStreamType.PlainText)
             Catch ex As Exception
-                MessageBox.Show("Unexpected Error! Description: " & ex.Message & " Error Code: " & ex.GetHashCode(), "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
         lStatus.Text = "Open file."
@@ -123,7 +123,7 @@ Public Class Form1
                 alreadySaved = True
                 IsModified = False
             Catch ex As Exception
-                MessageBox.Show("Unexpected Error! Description: " & ex.Message & " Error Code: " & ex.GetHashCode(), "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         ElseIf GetExtension(file) = ".rtf" Then
             Try
@@ -132,7 +132,7 @@ Public Class Form1
                 alreadySaved = True
                 IsModified = False
             Catch ex As Exception
-                MessageBox.Show("Unexpected Error! Description: " & ex.Message & " Error Code: " & ex.GetHashCode(), "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         Else
             Try
@@ -141,7 +141,7 @@ Public Class Form1
                 alreadySaved = True
                 IsModified = False
             Catch ex As Exception
-                MessageBox.Show("Unexpected Error! Description: " & ex.Message & " Error Code: " & ex.GetHashCode(), "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         End If
         lStatus.Text = "Save document."
@@ -453,6 +453,7 @@ Public Class Form1
             lStatus.Text = "Exit Fullscreen."
         Else
             Me.FormBorderStyle = FormBorderStyle.None
+            Me.WindowState = FormWindowState.Normal
             Me.WindowState = FormWindowState.Maximized
             isFullscreen = True
             bFullscreen.Checked = True
@@ -495,7 +496,7 @@ Public Class Form1
     End Function
 
     Private Sub bTColor_Click(sender As Object, e As EventArgs) Handles bTColor.Click
-        lStatus.Text = "Open Color Dialog."
+        lStatus.Text = "Open Text Color Dialog."
         If cdColor.ShowDialog = DialogResult.OK Then
             lStatus.Text = "Change Text Color."
             rtbMain.SelectionColor = cdColor.Color
@@ -554,5 +555,17 @@ Public Class Form1
 
             cbFontSize.Text = rtbMain.SelectionFont.Size
         End If
+    End Sub
+
+    Private Sub bBackColor_Click(sender As Object, e As EventArgs) Handles bBackColor.Click
+        lStatus.Text = "Open Background Color Dialog."
+        If cdBackColor.ShowDialog = DialogResult.OK Then
+            lStatus.Text = "Change Background Color."
+            rtbMain.SelectionBackColor = cdBackColor.Color
+        End If
+    End Sub
+
+    Private Sub bRawEdit_Click(sender As Object, e As EventArgs) Handles bRawEdit.Click
+        RawEdit.Show()
     End Sub
 End Class
