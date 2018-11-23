@@ -1,8 +1,13 @@
+Changelog for NoteyWrite 1.0.2.1
+-------------------------------------------------------
+- Made the Title of the window change with the document name.
+-------------------------------------------------------
+
 Changelog for NoteyWrite 1.0.2.0
 -------------------------------------------------------
 - Added a option to change the Background Color.
 - Reorganized Web Browser into a new category "Tools".
-- Added a tool for editing the raw RTF called "RawEdit"
+- Added a tool for editing the raw RTF called "RawEdit".
 -------------------------------------------------------
 
 Changelog for NoteyWrite 1.0.1.4

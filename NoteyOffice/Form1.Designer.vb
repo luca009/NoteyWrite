@@ -119,72 +119,72 @@ Partial Class Form1
         '
         Me.bNew.Image = CType(resources.GetObject("bNew.Image"), System.Drawing.Image)
         Me.bNew.Name = "bNew"
-        Me.bNew.Size = New System.Drawing.Size(180, 22)
+        Me.bNew.Size = New System.Drawing.Size(142, 22)
         Me.bNew.Text = "New"
         '
         'bOpen
         '
         Me.bOpen.Image = CType(resources.GetObject("bOpen.Image"), System.Drawing.Image)
         Me.bOpen.Name = "bOpen"
-        Me.bOpen.Size = New System.Drawing.Size(180, 22)
+        Me.bOpen.Size = New System.Drawing.Size(142, 22)
         Me.bOpen.Text = "Open..."
         '
         'bSave
         '
         Me.bSave.Image = CType(resources.GetObject("bSave.Image"), System.Drawing.Image)
         Me.bSave.Name = "bSave"
-        Me.bSave.Size = New System.Drawing.Size(180, 22)
+        Me.bSave.Size = New System.Drawing.Size(142, 22)
         Me.bSave.Text = "Save"
         '
         'bSaveAs
         '
         Me.bSaveAs.Image = CType(resources.GetObject("bSaveAs.Image"), System.Drawing.Image)
         Me.bSaveAs.Name = "bSaveAs"
-        Me.bSaveAs.Size = New System.Drawing.Size(180, 22)
+        Me.bSaveAs.Size = New System.Drawing.Size(142, 22)
         Me.bSaveAs.Text = "Save As..."
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(139, 6)
         '
         'bPageSetup
         '
         Me.bPageSetup.Name = "bPageSetup"
-        Me.bPageSetup.Size = New System.Drawing.Size(180, 22)
+        Me.bPageSetup.Size = New System.Drawing.Size(142, 22)
         Me.bPageSetup.Text = "Page Setup..."
         '
         'bPrint
         '
         Me.bPrint.Image = CType(resources.GetObject("bPrint.Image"), System.Drawing.Image)
         Me.bPrint.Name = "bPrint"
-        Me.bPrint.Size = New System.Drawing.Size(180, 22)
+        Me.bPrint.Size = New System.Drawing.Size(142, 22)
         Me.bPrint.Text = "Print... "
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(139, 6)
         '
         'bExit
         '
         Me.bExit.Image = CType(resources.GetObject("bExit.Image"), System.Drawing.Image)
         Me.bExit.Name = "bExit"
-        Me.bExit.Size = New System.Drawing.Size(180, 22)
+        Me.bExit.Size = New System.Drawing.Size(142, 22)
         Me.bExit.Text = "Exit"
         '
         'bAbout
         '
         Me.bAbout.Image = CType(resources.GetObject("bAbout.Image"), System.Drawing.Image)
         Me.bAbout.Name = "bAbout"
-        Me.bAbout.Size = New System.Drawing.Size(180, 22)
+        Me.bAbout.Size = New System.Drawing.Size(142, 22)
         Me.bAbout.Text = "About"
         '
         'bChangelog
         '
         Me.bChangelog.Image = CType(resources.GetObject("bChangelog.Image"), System.Drawing.Image)
         Me.bChangelog.Name = "bChangelog"
-        Me.bChangelog.Size = New System.Drawing.Size(180, 22)
+        Me.bChangelog.Size = New System.Drawing.Size(142, 22)
         Me.bChangelog.Text = "Changelog"
         '
         'ddbEdit
@@ -340,13 +340,13 @@ Partial Class Form1
         'bWebBrowser
         '
         Me.bWebBrowser.Name = "bWebBrowser"
-        Me.bWebBrowser.Size = New System.Drawing.Size(143, 22)
+        Me.bWebBrowser.Size = New System.Drawing.Size(180, 22)
         Me.bWebBrowser.Text = "Web Browser"
         '
         'bRawEdit
         '
         Me.bRawEdit.Name = "bRawEdit"
-        Me.bRawEdit.Size = New System.Drawing.Size(143, 22)
+        Me.bRawEdit.Size = New System.Drawing.Size(180, 22)
         Me.bRawEdit.Text = "RawEdit"
         '
         'ofdOpen
@@ -594,7 +594,7 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(400, 160)
         Me.Name = "Form1"
-        Me.Text = "NoteyWrite"
+        Me.Text = "NoteyWrite - Untitled"
         Me.tsTools.ResumeLayout(False)
         Me.tsTools.PerformLayout()
         Me.tsFormatting.ResumeLayout(False)

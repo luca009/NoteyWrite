@@ -91,6 +91,7 @@ Public Class Form1
             End Try
         End If
         lStatus.Text = "Open file."
+        Me.Text = "NoteyWrite - " & GetFileName(file)
     End Function
 
     Private Sub PrintDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles pdPrint.PrintPage
@@ -145,6 +146,7 @@ Public Class Form1
             End Try
         End If
         lStatus.Text = "Save document."
+        Me.Text = "NoteyWrite - " & GetFileName(file)
     End Function
 
     Private Sub bOpen_Click(sender As Object, e As EventArgs) Handles bOpen.Click
@@ -220,6 +222,7 @@ Public Class Form1
         sDocument.Show()
         sDocument.rtbMain.Text = ""
         lStatus.Text = "Create new document."
+        sDocument.Text = "NoteyWrite - Untitled"
     End Sub
 
     Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs) Handles rtbMain.TextChanged
