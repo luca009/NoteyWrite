@@ -1,3 +1,9 @@
+Changelog for NoteyWrite 1.0.2.2
+-------------------------------------------------------
+- A star in the window title now indicates wheater the document has been saved or not.
+- When you make a new document, a new instance is now launched, instead of a new window.
+-------------------------------------------------------
+
 Changelog for NoteyWrite 1.0.2.1
 -------------------------------------------------------
 - Made the Title of the window change with the document name.
