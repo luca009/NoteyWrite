@@ -553,7 +553,7 @@ Partial Class Form1
         Me.lStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.lStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.lStatus.Name = "lStatus"
-        Me.lStatus.Size = New System.Drawing.Size(287, 17)
+        Me.lStatus.Size = New System.Drawing.Size(318, 17)
         Me.lStatus.Spring = True
         Me.lStatus.Text = "None"
         '
@@ -569,7 +569,7 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.2.1"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.2.2"
         '
         'rtbMain
         '

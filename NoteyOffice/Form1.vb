@@ -107,10 +107,9 @@ Public Class Form1
     End Sub
 
     Private Sub bNew_Click(sender As Object, e As EventArgs) Handles bNew.Click
-        ' Duplicate the current form and clear the text on it
-        Dim sDocument As New Form1
-        sDocument.rtbMain.Clear()
-        sDocument.Show()
+        ' Make a new document in a new window.
+        Dim ExePath As String = Application.ExecutablePath
+        Process.Start(ExePath)
         lStatus.Text = "Create new document."
     End Sub
 
@@ -198,10 +197,10 @@ Public Class Form1
         ' Check if the current file has been modified, if so show a dialog asking if the user wants to save their work
         If IsModified Then
             If SaveDialog.ShowDialog() <> DialogResult.Cancel Then
-                Application.Exit()
+                Me.Close()
             End If
         Else
-            Application.Exit()
+            Me.Close()
         End If
     End Sub
 
@@ -211,23 +210,28 @@ Public Class Form1
             If SaveDialog.ShowDialog() = DialogResult.Cancel Then
                 e.Cancel = True
             Else
-                Application.Exit()
+                Me.Close()
             End If
         End If
     End Sub
 
     Private Sub tsbNew_Click(sender As Object, e As EventArgs) Handles tsbNew.Click
         ' Create a new Document in a new Window
-        Dim sDocument As New Form1
-        sDocument.Show()
-        sDocument.rtbMain.Text = ""
+        Dim ExePath As String = Application.ExecutablePath
+        Process.Start(ExePath)
         lStatus.Text = "Create new document."
-        sDocument.Text = "NoteyWrite - Untitled"
     End Sub
 
     Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs) Handles rtbMain.TextChanged
         ' If the text gets changed, the isModified variable sets to True
-        IsModified = True
+        If Not IsModified Then
+            If alreadySaved Then
+                Me.Text = "NoteyWrite - " & GetFileName(currentlyOpen) & "*"
+            Else
+                Me.Text = "NoteyWrite - Untitled*"
+            End If
+            IsModified = True
+        End If
         lLength.Text = "Length: " & rtbMain.TextLength
     End Sub
 
