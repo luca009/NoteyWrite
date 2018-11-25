@@ -59,6 +59,46 @@ Public Class Form1
         Dim installedFonts As New InstalledFontCollection
         Dim fontFamilies = installedFonts.Families()
         Array.ForEach(fontFamilies, Sub(fontFamily) cbFont.Items.Add(fontFamily.Name))
+
+        ' Look for User Settings and apply them
+        If My.Settings.DarkTheme Then
+            ' Apply Dark Theme
+            tsTools.BackColor = Color.Black
+
+            ' Fore some reason ddbFile's BackColor won't change with tsTools
+            ddbFile.BackColor = Color.Black
+
+            ddbFile.ForeColor = Color.White
+            ddbEdit.ForeColor = Color.White
+            ddbView.ForeColor = Color.White
+            ddbTools.ForeColor = Color.White
+            bSettings.ForeColor = Color.White
+
+            tsFormatting.BackColor = Color.Black
+
+            ssStatus.BackColor = Color.Black
+            ssStatus.ForeColor = Color.White
+        End If
+
+        If Not My.Settings.showEdit Then
+            ddbEdit.Visible = False
+        End If
+
+        If Not My.Settings.showView Then
+            ddbView.Visible = False
+        End If
+
+        If Not My.Settings.showTools Then
+            ddbTools.Visible = False
+        End If
+
+        If Not My.Settings.showFormatting Then
+            tsFormatting.Visible = False
+        End If
+
+        If Not My.Settings.showStatus Then
+            ssStatus.Visible = False
+        End If
     End Sub
 
     Public Sub New()
@@ -222,7 +262,7 @@ Public Class Form1
         lStatus.Text = "Create new document."
     End Sub
 
-    Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs) Handles rtbMain.TextChanged
+    Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs)
         ' If the text gets changed, the isModified variable sets to True
         If Not IsModified Then
             If alreadySaved Then
@@ -510,7 +550,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub rtbMain_SelectionChanged(sender As Object, e As EventArgs) Handles rtbMain.SelectionChanged
+    Private Sub rtbMain_SelectionChanged(sender As Object, e As EventArgs)
         If rtbMain.SelectionAlignment <> vbNull Then
             ' If statement for the Alignment of the text
             If rtbMain.SelectionAlignment = HorizontalAlignment.Left Then
@@ -565,6 +605,7 @@ Public Class Form1
     End Sub
 
     Private Sub bBackColor_Click(sender As Object, e As EventArgs) Handles bBackColor.Click
+        ' Opens the Background Color dialog, and if possible, change the Background Color.
         lStatus.Text = "Open Background Color Dialog."
         If cdBackColor.ShowDialog = DialogResult.OK Then
             lStatus.Text = "Change Background Color."
@@ -574,5 +615,9 @@ Public Class Form1
 
     Private Sub bRawEdit_Click(sender As Object, e As EventArgs) Handles bRawEdit.Click
         RawEdit.Show()
+    End Sub
+
+    Private Sub bSettings_Click(sender As Object, e As EventArgs) Handles bSettings.Click
+        settings.Show()
     End Sub
 End Class

@@ -1,3 +1,12 @@
+Changelog for NoteyWrite 1.0.3.0
+-------------------------------------------------------
+- Added a new "Settings" window.
+- Added a dark theme.
+- Added the ability to show/hide elements on the Action Bar (Edit, View, Tools).
+- Added the ability to show/hide the toolbars.
+- Made the default format for saving "Rich Text Files (*.rtf)".
+-------------------------------------------------------
+
 Changelog for NoteyWrite 1.0.2.2
 -------------------------------------------------------
 - A star in the window title now indicates wheater the document has been saved or not.

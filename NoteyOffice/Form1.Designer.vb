@@ -55,9 +55,10 @@ Partial Class Form1
         Me.bWordWrap = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
         Me.bFullscreen = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ddbTools = New System.Windows.Forms.ToolStripDropDownButton()
         Me.bWebBrowser = New System.Windows.Forms.ToolStripMenuItem()
         Me.bRawEdit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.bSettings = New System.Windows.Forms.ToolStripButton()
         Me.ofdOpen = New System.Windows.Forms.OpenFileDialog()
         Me.sfdSave = New System.Windows.Forms.SaveFileDialog()
         Me.psdPageSetup = New System.Windows.Forms.PageSetupDialog()
@@ -83,7 +84,7 @@ Partial Class Form1
         Me.bTColor = New System.Windows.Forms.ToolStripButton()
         Me.bBackColor = New System.Windows.Forms.ToolStripButton()
         Me.pdPrint = New System.Drawing.Printing.PrintDocument()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.ssStatus = New System.Windows.Forms.StatusStrip()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.lLength = New System.Windows.Forms.ToolStripStatusLabel()
@@ -93,12 +94,13 @@ Partial Class Form1
         Me.rtbMain = New NoteyOffice.RichTextBoxPrint.RichTextBoxPrintCtrl()
         Me.tsTools.SuspendLayout()
         Me.tsFormatting.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
+        Me.ssStatus.SuspendLayout()
         Me.SuspendLayout()
         '
         'tsTools
         '
-        Me.tsTools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ddbFile, Me.ddbEdit, Me.ddbView, Me.ToolStripDropDownButton1})
+        Me.tsTools.BackColor = System.Drawing.Color.White
+        Me.tsTools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ddbFile, Me.ddbEdit, Me.ddbView, Me.ddbTools, Me.bSettings})
         Me.tsTools.Location = New System.Drawing.Point(0, 0)
         Me.tsTools.Name = "tsTools"
         Me.tsTools.Size = New System.Drawing.Size(594, 25)
@@ -107,8 +109,10 @@ Partial Class Form1
         '
         'ddbFile
         '
+        Me.ddbFile.BackColor = System.Drawing.Color.White
         Me.ddbFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.ddbFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bNew, Me.bOpen, Me.bSave, Me.bSaveAs, Me.ToolStripSeparator1, Me.bPageSetup, Me.bPrint, Me.ToolStripSeparator2, Me.bExit, Me.bAbout, Me.bChangelog})
+        Me.ddbFile.ForeColor = System.Drawing.Color.Black
         Me.ddbFile.Image = CType(resources.GetObject("ddbFile.Image"), System.Drawing.Image)
         Me.ddbFile.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbFile.Name = "ddbFile"
@@ -119,7 +123,7 @@ Partial Class Form1
         '
         Me.bNew.Image = CType(resources.GetObject("bNew.Image"), System.Drawing.Image)
         Me.bNew.Name = "bNew"
-        Me.bNew.Size = New System.Drawing.Size(142, 22)
+        Me.bNew.Size = New System.Drawing.Size(180, 22)
         Me.bNew.Text = "New"
         '
         'bOpen
@@ -202,7 +206,7 @@ Partial Class Form1
         Me.bUndo.Image = CType(resources.GetObject("bUndo.Image"), System.Drawing.Image)
         Me.bUndo.Name = "bUndo"
         Me.bUndo.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Z), System.Windows.Forms.Keys)
-        Me.bUndo.Size = New System.Drawing.Size(164, 22)
+        Me.bUndo.Size = New System.Drawing.Size(204, 22)
         Me.bUndo.Text = "Undo"
         '
         'bRedo
@@ -210,32 +214,33 @@ Partial Class Form1
         Me.bRedo.Image = CType(resources.GetObject("bRedo.Image"), System.Drawing.Image)
         Me.bRedo.Name = "bRedo"
         Me.bRedo.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Y), System.Windows.Forms.Keys)
-        Me.bRedo.Size = New System.Drawing.Size(164, 22)
+        Me.bRedo.Size = New System.Drawing.Size(204, 22)
         Me.bRedo.Text = "Redo"
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(201, 6)
         '
         'bFindReplace
         '
         Me.bFindReplace.Image = CType(resources.GetObject("bFindReplace.Image"), System.Drawing.Image)
         Me.bFindReplace.Name = "bFindReplace"
-        Me.bFindReplace.Size = New System.Drawing.Size(164, 22)
+        Me.bFindReplace.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
+        Me.bFindReplace.Size = New System.Drawing.Size(204, 22)
         Me.bFindReplace.Text = "Find and Replace"
         '
         'ToolStripSeparator10
         '
         Me.ToolStripSeparator10.Name = "ToolStripSeparator10"
-        Me.ToolStripSeparator10.Size = New System.Drawing.Size(161, 6)
+        Me.ToolStripSeparator10.Size = New System.Drawing.Size(201, 6)
         '
         'bCut
         '
         Me.bCut.Image = CType(resources.GetObject("bCut.Image"), System.Drawing.Image)
         Me.bCut.Name = "bCut"
         Me.bCut.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.bCut.Size = New System.Drawing.Size(164, 22)
+        Me.bCut.Size = New System.Drawing.Size(204, 22)
         Me.bCut.Text = "Cut"
         '
         'bCopy
@@ -243,7 +248,7 @@ Partial Class Form1
         Me.bCopy.Image = CType(resources.GetObject("bCopy.Image"), System.Drawing.Image)
         Me.bCopy.Name = "bCopy"
         Me.bCopy.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.C), System.Windows.Forms.Keys)
-        Me.bCopy.Size = New System.Drawing.Size(164, 22)
+        Me.bCopy.Size = New System.Drawing.Size(204, 22)
         Me.bCopy.Text = "Copy"
         '
         'bPaste
@@ -251,7 +256,7 @@ Partial Class Form1
         Me.bPaste.Image = CType(resources.GetObject("bPaste.Image"), System.Drawing.Image)
         Me.bPaste.Name = "bPaste"
         Me.bPaste.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.V), System.Windows.Forms.Keys)
-        Me.bPaste.Size = New System.Drawing.Size(164, 22)
+        Me.bPaste.Size = New System.Drawing.Size(204, 22)
         Me.bPaste.Text = "Paste"
         '
         'bDelete
@@ -259,7 +264,7 @@ Partial Class Form1
         Me.bDelete.Image = CType(resources.GetObject("bDelete.Image"), System.Drawing.Image)
         Me.bDelete.Name = "bDelete"
         Me.bDelete.ShortcutKeys = System.Windows.Forms.Keys.Delete
-        Me.bDelete.Size = New System.Drawing.Size(164, 22)
+        Me.bDelete.Size = New System.Drawing.Size(204, 22)
         Me.bDelete.Text = "Delete"
         '
         'bSelectAll
@@ -267,7 +272,7 @@ Partial Class Form1
         Me.bSelectAll.Image = CType(resources.GetObject("bSelectAll.Image"), System.Drawing.Image)
         Me.bSelectAll.Name = "bSelectAll"
         Me.bSelectAll.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.A), System.Windows.Forms.Keys)
-        Me.bSelectAll.Size = New System.Drawing.Size(164, 22)
+        Me.bSelectAll.Size = New System.Drawing.Size(204, 22)
         Me.bSelectAll.Text = "Select all"
         '
         'ddbView
@@ -327,15 +332,15 @@ Partial Class Form1
         Me.bFullscreen.Size = New System.Drawing.Size(137, 22)
         Me.bFullscreen.Text = "Fullscreen"
         '
-        'ToolStripDropDownButton1
+        'ddbTools
         '
-        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bWebBrowser, Me.bRawEdit})
-        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
-        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(48, 22)
-        Me.ToolStripDropDownButton1.Text = "Tools"
+        Me.ddbTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ddbTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bWebBrowser, Me.bRawEdit})
+        Me.ddbTools.Image = CType(resources.GetObject("ddbTools.Image"), System.Drawing.Image)
+        Me.ddbTools.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ddbTools.Name = "ddbTools"
+        Me.ddbTools.Size = New System.Drawing.Size(48, 22)
+        Me.ddbTools.Text = "Tools"
         '
         'bWebBrowser
         '
@@ -349,6 +354,15 @@ Partial Class Form1
         Me.bRawEdit.Size = New System.Drawing.Size(143, 22)
         Me.bRawEdit.Text = "RawEdit"
         '
+        'bSettings
+        '
+        Me.bSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.bSettings.Image = CType(resources.GetObject("bSettings.Image"), System.Drawing.Image)
+        Me.bSettings.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.bSettings.Name = "bSettings"
+        Me.bSettings.Size = New System.Drawing.Size(53, 22)
+        Me.bSettings.Text = "Settings"
+        '
         'ofdOpen
         '
         Me.ofdOpen.Filter = "Known text formats (*.txt, *.rtf)|*.txt; *.rtf|All files (*.*)|*.*"
@@ -357,7 +371,7 @@ Partial Class Form1
         'sfdSave
         '
         Me.sfdSave.DefaultExt = "rtf"
-        Me.sfdSave.Filter = "Plain text files (*.txt)|*.txt|Rich text files|*.rtf|All files (*.*)|*.*"
+        Me.sfdSave.Filter = "Rich text files|*.rtf|Plain text files (*.txt)|*.txt|All files (*.*)|*.*"
         Me.sfdSave.Title = "Save a document - NoteyWrite"
         '
         'pdPrintD
@@ -366,6 +380,7 @@ Partial Class Form1
         '
         'tsFormatting
         '
+        Me.tsFormatting.BackColor = System.Drawing.Color.White
         Me.tsFormatting.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.tsFormatting.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbNew, Me.tsbOpen, Me.tsbSave, Me.tsbSaveAs, Me.ToolStripSeparator4, Me.cbFontSize, Me.cbFont, Me.ToolStripSeparator5, Me.tsbAlignLeft, Me.tsbAlignCenter, Me.tsbAlignRight, Me.ToolStripSeparator6, Me.tsbBold, Me.tsbItalic, Me.tsbUnderline, Me.tsbStrikethrough, Me.ToolStripSeparator11, Me.bTColor, Me.bBackColor})
         Me.tsFormatting.Location = New System.Drawing.Point(0, 25)
@@ -530,16 +545,17 @@ Partial Class Form1
         'pdPrint
         '
         '
-        'StatusStrip1
+        'ssStatus
         '
-        Me.StatusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel2, Me.lStatus, Me.lLength, Me.ToolStripStatusLabel1})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 378)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(594, 22)
-        Me.StatusStrip1.SizingGrip = False
-        Me.StatusStrip1.TabIndex = 5
-        Me.StatusStrip1.Text = "StatusStrip1"
+        Me.ssStatus.BackColor = System.Drawing.Color.White
+        Me.ssStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
+        Me.ssStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel2, Me.lStatus, Me.lLength, Me.ToolStripStatusLabel1})
+        Me.ssStatus.Location = New System.Drawing.Point(0, 378)
+        Me.ssStatus.Name = "ssStatus"
+        Me.ssStatus.Size = New System.Drawing.Size(594, 22)
+        Me.ssStatus.SizingGrip = False
+        Me.ssStatus.TabIndex = 5
+        Me.ssStatus.Text = "StatusStrip1"
         '
         'ToolStripStatusLabel2
         '
@@ -569,17 +585,16 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.2.2"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.3.0"
         '
         'rtbMain
         '
         Me.rtbMain.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtbMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtbMain.Location = New System.Drawing.Point(0, 50)
         Me.rtbMain.Name = "rtbMain"
         Me.rtbMain.Size = New System.Drawing.Size(594, 328)
-        Me.rtbMain.TabIndex = 6
+        Me.rtbMain.TabIndex = 7
         Me.rtbMain.Text = ""
         '
         'Form1
@@ -588,7 +603,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(594, 400)
         Me.Controls.Add(Me.rtbMain)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.Controls.Add(Me.ssStatus)
         Me.Controls.Add(Me.tsFormatting)
         Me.Controls.Add(Me.tsTools)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -599,8 +614,8 @@ Partial Class Form1
         Me.tsTools.PerformLayout()
         Me.tsFormatting.ResumeLayout(False)
         Me.tsFormatting.PerformLayout()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
+        Me.ssStatus.ResumeLayout(False)
+        Me.ssStatus.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -660,7 +675,7 @@ Partial Class Form1
     Friend WithEvents ToolStripSeparator8 As ToolStripSeparator
     Friend WithEvents bFindReplace As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator10 As ToolStripSeparator
-    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents ssStatus As StatusStrip
     Friend WithEvents lStatus As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ToolStripSeparator11 As ToolStripSeparator
@@ -670,8 +685,9 @@ Partial Class Form1
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents bBackColor As ToolStripButton
     Friend WithEvents cdBackColor As ColorDialog
-    Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
+    Friend WithEvents ddbTools As ToolStripDropDownButton
     Friend WithEvents bRawEdit As ToolStripMenuItem
     Friend WithEvents bWebBrowser As ToolStripMenuItem
-    Public WithEvents rtbMain As RichTextBoxPrint.RichTextBoxPrintCtrl
+    Friend WithEvents rtbMain As RichTextBoxPrint.RichTextBoxPrintCtrl
+    Friend WithEvents bSettings As ToolStripButton
 End Class
