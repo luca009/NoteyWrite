@@ -1,3 +1,8 @@
+Changelog for NoteyWritre 1.0.3.1
+-------------------------------------------------------
+- Added a new tab in the Settings window "Defaults".
+- Added the ability to change the default font (size).
+
 Changelog for NoteyWrite 1.0.3.0
 -------------------------------------------------------
 - Added a new "Settings" window.
@@ -5,6 +10,7 @@ Changelog for NoteyWrite 1.0.3.0
 - Added the ability to show/hide elements on the Action Bar (Edit, View, Tools).
 - Added the ability to show/hide the toolbars.
 - Made the default format for saving "Rich Text Files (*.rtf)".
+- Changed some of the icons to be more space efficient.
 -------------------------------------------------------
 
 Changelog for NoteyWrite 1.0.2.2

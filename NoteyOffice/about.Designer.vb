@@ -27,7 +27,6 @@ Partial Class about
         Me.pbbClose = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.llMore = New System.Windows.Forms.LinkLabel()
         CType(Me.pbbClose, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -59,28 +58,18 @@ Partial Class about
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(38, 29)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(135, 13)
+        Me.Label2.Size = New System.Drawing.Size(137, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Designed to be lightweight."
+        Me.Label2.Text = "Featurefull and Lightweight."
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(12, 71)
+        Me.Label3.Location = New System.Drawing.Point(12, 54)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(131, 13)
+        Me.Label3.Size = New System.Drawing.Size(175, 13)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Coded with ♥ in Austria by"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(149, 69)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 17)
-        Me.Label4.TabIndex = 4
-        Me.Label4.Text = "luca009"
+        Me.Label3.Text = "Coded with ♥ in Austria by luca009."
         '
         'Label5
         '
@@ -89,7 +78,7 @@ Partial Class about
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(184, 13)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Version 1.0.3.0, 25th November 2018"
+        Me.Label5.Text = "Version 1.0.3.1, 29th November 2018"
         '
         'llMore
         '
@@ -108,7 +97,6 @@ Partial Class about
         Me.ClientSize = New System.Drawing.Size(286, 138)
         Me.Controls.Add(Me.llMore)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.pbbClose)
@@ -131,7 +119,6 @@ Partial Class about
     Friend WithEvents pbbClose As PictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents llMore As LinkLabel
 End Class

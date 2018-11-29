@@ -1,4 +1,6 @@
-﻿Public Class settings
+﻿Imports System.Drawing.Text
+
+Public Class settings
     Private Sub bCancel_Click(sender As Object, e As EventArgs) Handles bCancel.Click
         Me.Close()
     End Sub
@@ -41,6 +43,9 @@
             My.Settings.showStatus = False
         End If
 
+        My.Settings.defaultFont = cbFont.Text
+        My.Settings.defaultFontSize = cbFontSize.Text
+
         My.Settings.Save()
         Form1.Close()
         Form1.Show()
@@ -48,6 +53,11 @@
     End Sub
 
     Private Sub settings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Add all installed fonts to the list of selectable fonts in the "Default Font" ComboBox.
+        Dim installedFonts As New InstalledFontCollection
+        Dim fontFamilies = installedFonts.Families
+        Array.ForEach(fontFamilies, Sub(fontFamily) cbFont.Items.Add(fontFamily.Name))
+
         ' Check which settings are enabled/disabled in the settings configuration and change the UI elements to fit the configuration.
         If My.Settings.DarkTheme Then
             cbDarkTheme.Checked = True
@@ -72,5 +82,8 @@
         If Not My.Settings.showStatus Then
             cbStatusBar.Checked = False
         End If
+
+        cbFont.Text = My.Settings.defaultFont
+        cbFontSize.Text = My.Settings.defaultFontSize
     End Sub
 End Class

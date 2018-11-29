@@ -13,6 +13,7 @@ Public Class Form1
     Private checkPrint As Integer
     Public isFullscreen As Boolean = False
 
+
     ' Create a function for toggeling a checked state
     Function toggleChecked(ByVal tsb As ToolStripButton)
         tsb.Checked = Not tsb.Checked
@@ -57,7 +58,7 @@ Public Class Form1
 
         ' Check for installed fonts and add them to the list of fonts
         Dim installedFonts As New InstalledFontCollection
-        Dim fontFamilies = installedFonts.Families()
+        Dim fontFamilies = installedFonts.Families
         Array.ForEach(fontFamilies, Sub(fontFamily) cbFont.Items.Add(fontFamily.Name))
 
         ' Look for User Settings and apply them
@@ -99,6 +100,10 @@ Public Class Form1
         If Not My.Settings.showStatus Then
             ssStatus.Visible = False
         End If
+
+        cbFont.Text = My.Settings.defaultFont
+        cbFontSize.Text = My.Settings.defaultFontSize
+        rtbMain.SelectionFont = New Font(My.Settings.defaultFont, My.Settings.defaultFontSize)
     End Sub
 
     Public Sub New()

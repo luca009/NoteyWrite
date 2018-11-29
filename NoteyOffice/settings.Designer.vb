@@ -44,9 +44,14 @@ Partial Class settings
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cbDarkTheme = New System.Windows.Forms.CheckBox()
+        Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.cbFont = New System.Windows.Forms.ComboBox()
+        Me.cbFontSize = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -54,6 +59,8 @@ Partial Class settings
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -111,6 +118,7 @@ Partial Class settings
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(3, 3)
@@ -307,6 +315,57 @@ Partial Class settings
         Me.cbDarkTheme.Text = "Enable Dark Theme"
         Me.cbDarkTheme.UseVisualStyleBackColor = True
         '
+        'TabPage3
+        '
+        Me.TabPage3.Controls.Add(Me.GroupBox4)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage3.Name = "TabPage3"
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage3.Size = New System.Drawing.Size(364, 218)
+        Me.TabPage3.TabIndex = 2
+        Me.TabPage3.Text = "Defaults"
+        Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.cbFont)
+        Me.GroupBox4.Controls.Add(Me.cbFontSize)
+        Me.GroupBox4.Controls.Add(Me.Label6)
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 7)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(351, 53)
+        Me.GroupBox4.TabIndex = 0
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Font"
+        '
+        'cbFont
+        '
+        Me.cbFont.FormattingEnabled = True
+        Me.cbFont.Location = New System.Drawing.Point(172, 19)
+        Me.cbFont.Name = "cbFont"
+        Me.cbFont.Size = New System.Drawing.Size(173, 21)
+        Me.cbFont.TabIndex = 2
+        Me.cbFont.Text = "Microsoft Sans Serif"
+        '
+        'cbFontSize
+        '
+        Me.cbFontSize.FormattingEnabled = True
+        Me.cbFontSize.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72", "94", "106"})
+        Me.cbFontSize.Location = New System.Drawing.Point(120, 19)
+        Me.cbFontSize.Name = "cbFontSize"
+        Me.cbFontSize.Size = New System.Drawing.Size(46, 21)
+        Me.cbFontSize.TabIndex = 1
+        Me.cbFontSize.Text = "8"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 22)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(108, 13)
+        Me.Label6.TabIndex = 0
+        Me.Label6.Text = "Select a default Font:"
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.Label5)
@@ -319,16 +378,6 @@ Partial Class settings
         Me.TabPage2.Text = "Coming soon..."
         Me.TabPage2.UseVisualStyleBackColor = True
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 3)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(312, 51)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Coming soon..."
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -338,6 +387,16 @@ Partial Class settings
         Me.Label5.TabIndex = 1
         Me.Label5.Text = "But don't worry!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NoteyWrite is being actively developed by luca009, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and these " &
     "settings will come VERY soon." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(3, 3)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(312, 51)
+        Me.Label4.TabIndex = 0
+        Me.Label4.Text = "Coming soon..."
         '
         'settings
         '
@@ -361,6 +420,9 @@ Partial Class settings
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
@@ -391,4 +453,9 @@ Partial Class settings
     Public WithEvents cbStatusBar As CheckBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
+    Friend WithEvents TabPage3 As TabPage
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents cbFontSize As ComboBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents cbFont As ComboBox
 End Class

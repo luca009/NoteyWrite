@@ -123,7 +123,7 @@ Partial Class Form1
         '
         Me.bNew.Image = CType(resources.GetObject("bNew.Image"), System.Drawing.Image)
         Me.bNew.Name = "bNew"
-        Me.bNew.Size = New System.Drawing.Size(180, 22)
+        Me.bNew.Size = New System.Drawing.Size(142, 22)
         Me.bNew.Text = "New"
         '
         'bOpen
@@ -433,9 +433,10 @@ Partial Class Form1
         'cbFontSize
         '
         Me.cbFontSize.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72", "94", "106"})
+        Me.cbFontSize.MaxLength = 3
         Me.cbFontSize.Name = "cbFontSize"
         Me.cbFontSize.Size = New System.Drawing.Size(121, 25)
-        Me.cbFontSize.Text = "9"
+        Me.cbFontSize.Text = "8"
         '
         'cbFont
         '
@@ -569,7 +570,7 @@ Partial Class Form1
         Me.lStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.lStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.lStatus.Name = "lStatus"
-        Me.lStatus.Size = New System.Drawing.Size(318, 17)
+        Me.lStatus.Size = New System.Drawing.Size(287, 17)
         Me.lStatus.Spring = True
         Me.lStatus.Text = "None"
         '
@@ -585,12 +586,13 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.3.0"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.3.1"
         '
         'rtbMain
         '
         Me.rtbMain.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtbMain.Location = New System.Drawing.Point(0, 50)
         Me.rtbMain.Name = "rtbMain"
         Me.rtbMain.Size = New System.Drawing.Size(594, 328)

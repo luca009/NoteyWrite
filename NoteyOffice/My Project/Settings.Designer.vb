@@ -125,6 +125,30 @@ Namespace My
                 Me("showFormatting") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Microsoft Sans Serif")>  _
+        Public Property defaultFont() As String
+            Get
+                Return CType(Me("defaultFont"),String)
+            End Get
+            Set
+                Me("defaultFont") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("8")>  _
+        Public Property defaultFontSize() As String
+            Get
+                Return CType(Me("defaultFontSize"),String)
+            End Get
+            Set
+                Me("defaultFontSize") = value
+            End Set
+        End Property
     End Class
 End Namespace
 
