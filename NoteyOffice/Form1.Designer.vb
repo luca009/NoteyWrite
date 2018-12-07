@@ -570,7 +570,7 @@ Partial Class Form1
         Me.lStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.lStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.lStatus.Name = "lStatus"
-        Me.lStatus.Size = New System.Drawing.Size(287, 17)
+        Me.lStatus.Size = New System.Drawing.Size(318, 17)
         Me.lStatus.Spring = True
         Me.lStatus.Text = "None"
         '
@@ -586,17 +586,17 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.3.1"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.4.0"
         '
         'rtbMain
         '
         Me.rtbMain.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtbMain.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtbMain.Location = New System.Drawing.Point(0, 50)
+        Me.rtbMain.MaxLength = 2000000000
         Me.rtbMain.Name = "rtbMain"
         Me.rtbMain.Size = New System.Drawing.Size(594, 328)
-        Me.rtbMain.TabIndex = 7
+        Me.rtbMain.TabIndex = 9
         Me.rtbMain.Text = ""
         '
         'Form1
@@ -690,6 +690,6 @@ Partial Class Form1
     Friend WithEvents ddbTools As ToolStripDropDownButton
     Friend WithEvents bRawEdit As ToolStripMenuItem
     Friend WithEvents bWebBrowser As ToolStripMenuItem
-    Friend WithEvents rtbMain As RichTextBoxPrint.RichTextBoxPrintCtrl
     Friend WithEvents bSettings As ToolStripButton
+    Friend WithEvents rtbMain As RichTextBoxPrint.RichTextBoxPrintCtrl
 End Class

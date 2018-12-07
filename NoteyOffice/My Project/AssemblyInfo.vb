@@ -9,9 +9,9 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("NoteyWrite")>
-<Assembly: AssemblyDescription("NoteyWrite is a free and open-source Word Processor.")>
+<Assembly: AssemblyDescription("NoteyWrite is a free and open-source suite of Word-Processing tools.")>
 <Assembly: AssemblyCompany("luca009")>
-<Assembly: AssemblyProduct("NoteyWrite Word Processor")>
+<Assembly: AssemblyProduct("NoteyWrite Tools Suite")>
 <Assembly: AssemblyCopyright("Copyright ©  2018 luca009 under GPLv3")>
 <Assembly: AssemblyTrademark("")>
 
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.3.0")>
-<Assembly: AssemblyFileVersion("1.0.3.0")>
+<Assembly: AssemblyVersion("1.0.4.0")>
+<Assembly: AssemblyFileVersion("1.0.4.0")>

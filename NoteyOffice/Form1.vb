@@ -62,24 +62,22 @@ Public Class Form1
         Array.ForEach(fontFamilies, Sub(fontFamily) cbFont.Items.Add(fontFamily.Name))
 
         ' Look for User Settings and apply them
-        If My.Settings.DarkTheme Then
-            ' Apply Dark Theme
-            tsTools.BackColor = Color.Black
+        ' Apply Theme
+        tsTools.BackColor = My.Settings.uiBackColor
 
-            ' Fore some reason ddbFile's BackColor won't change with tsTools
-            ddbFile.BackColor = Color.Black
+        ' Fore some reason ddbFile's BackColor won't change with tsTools
+        ddbFile.BackColor = My.Settings.uiBackColor
 
-            ddbFile.ForeColor = Color.White
-            ddbEdit.ForeColor = Color.White
-            ddbView.ForeColor = Color.White
-            ddbTools.ForeColor = Color.White
-            bSettings.ForeColor = Color.White
+        ddbFile.ForeColor = My.Settings.uiForeColor
+        ddbEdit.ForeColor = My.Settings.uiForeColor
+        ddbView.ForeColor = My.Settings.uiForeColor
+        ddbTools.ForeColor = My.Settings.uiForeColor
+        bSettings.ForeColor = My.Settings.uiForeColor
 
-            tsFormatting.BackColor = Color.Black
+        tsFormatting.BackColor = My.Settings.uiBackColor
 
-            ssStatus.BackColor = Color.Black
-            ssStatus.ForeColor = Color.White
-        End If
+        ssStatus.BackColor = My.Settings.uiBackColor
+        ssStatus.ForeColor = My.Settings.uiForeColor
 
         If Not My.Settings.showEdit Then
             ddbEdit.Visible = False
@@ -99,6 +97,10 @@ Public Class Form1
 
         If Not My.Settings.showStatus Then
             ssStatus.Visible = False
+        End If
+
+        If My.Settings.higherCharacterLimit Then
+            rtbMain.MaxLength = 2147483647
         End If
 
         cbFont.Text = My.Settings.defaultFont

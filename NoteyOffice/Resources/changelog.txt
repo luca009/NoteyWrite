@@ -1,7 +1,17 @@
-Changelog for NoteyWritre 1.0.3.1
+Changelog for NoteyWrite 1.0.4.0
+-------------------------------------------------------
+- Fixed a typo in the changelog.
+- Added the ability to change to a custom theme.
+- Added the ability to change the maximum length of the document to the maximum.
+- Slight tweaks to the "About" dialog.
+- Improved a lot under the hood.
+-------------------------------------------------------
+
+Changelog for NoteyWrite 1.0.3.1
 -------------------------------------------------------
 - Added a new tab in the Settings window "Defaults".
 - Added the ability to change the default font (size).
+-------------------------------------------------------
 
 Changelog for NoteyWrite 1.0.3.0
 -------------------------------------------------------

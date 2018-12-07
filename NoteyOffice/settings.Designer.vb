@@ -42,8 +42,11 @@ Partial Class settings
         Me.cbFile = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.bFG = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.cbDarkTheme = New System.Windows.Forms.CheckBox()
+        Me.rbCustom = New System.Windows.Forms.RadioButton()
+        Me.rbDarkTheme = New System.Windows.Forms.RadioButton()
+        Me.rbStandard = New System.Windows.Forms.RadioButton()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.cbFont = New System.Windows.Forms.ComboBox()
@@ -52,6 +55,14 @@ Partial Class settings
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.bBG = New System.Windows.Forms.Button()
+        Me.cdForeColor = New System.Windows.Forms.ColorDialog()
+        Me.cdBackColor = New System.Windows.Forms.ColorDialog()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.cbHCharacterLimit = New System.Windows.Forms.CheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -62,6 +73,8 @@ Partial Class settings
         Me.TabPage3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -119,6 +132,7 @@ Partial Class settings
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage3)
+        Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(3, 3)
@@ -287,8 +301,13 @@ Partial Class settings
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.bBG)
+        Me.GroupBox1.Controls.Add(Me.bFG)
+        Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.cbDarkTheme)
+        Me.GroupBox1.Controls.Add(Me.rbCustom)
+        Me.GroupBox1.Controls.Add(Me.rbDarkTheme)
+        Me.GroupBox1.Controls.Add(Me.rbStandard)
         Me.GroupBox1.Location = New System.Drawing.Point(7, 7)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(351, 46)
@@ -296,24 +315,60 @@ Partial Class settings
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Theme"
         '
+        'bFG
+        '
+        Me.bFG.BackColor = System.Drawing.Color.Black
+        Me.bFG.Enabled = False
+        Me.bFG.ForeColor = System.Drawing.Color.Black
+        Me.bFG.Location = New System.Drawing.Point(230, 16)
+        Me.bFG.Name = "bFG"
+        Me.bFG.Size = New System.Drawing.Size(23, 23)
+        Me.bFG.TabIndex = 4
+        Me.bFG.UseVisualStyleBackColor = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(242, 21)
+        Me.Label1.Location = New System.Drawing.Point(200, 21)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(103, 13)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "More coming soon..."
+        Me.Label1.Size = New System.Drawing.Size(24, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "FG:"
         '
-        'cbDarkTheme
+        'rbCustom
         '
-        Me.cbDarkTheme.AutoSize = True
-        Me.cbDarkTheme.Location = New System.Drawing.Point(7, 20)
-        Me.cbDarkTheme.Name = "cbDarkTheme"
-        Me.cbDarkTheme.Size = New System.Drawing.Size(121, 17)
-        Me.cbDarkTheme.TabIndex = 0
-        Me.cbDarkTheme.Text = "Enable Dark Theme"
-        Me.cbDarkTheme.UseVisualStyleBackColor = True
+        Me.rbCustom.AutoSize = True
+        Me.rbCustom.Location = New System.Drawing.Point(134, 19)
+        Me.rbCustom.Name = "rbCustom"
+        Me.rbCustom.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.rbCustom.Size = New System.Drawing.Size(60, 17)
+        Me.rbCustom.TabIndex = 2
+        Me.rbCustom.TabStop = True
+        Me.rbCustom.Text = "Custom"
+        Me.rbCustom.UseVisualStyleBackColor = True
+        '
+        'rbDarkTheme
+        '
+        Me.rbDarkTheme.AutoSize = True
+        Me.rbDarkTheme.Location = New System.Drawing.Point(80, 19)
+        Me.rbDarkTheme.Name = "rbDarkTheme"
+        Me.rbDarkTheme.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.rbDarkTheme.Size = New System.Drawing.Size(48, 17)
+        Me.rbDarkTheme.TabIndex = 2
+        Me.rbDarkTheme.TabStop = True
+        Me.rbDarkTheme.Text = "Dark"
+        Me.rbDarkTheme.UseVisualStyleBackColor = True
+        '
+        'rbStandard
+        '
+        Me.rbStandard.AutoSize = True
+        Me.rbStandard.Location = New System.Drawing.Point(6, 19)
+        Me.rbStandard.Name = "rbStandard"
+        Me.rbStandard.Size = New System.Drawing.Size(68, 17)
+        Me.rbStandard.TabIndex = 2
+        Me.rbStandard.TabStop = True
+        Me.rbStandard.Text = "Standard"
+        Me.rbStandard.UseVisualStyleBackColor = True
         '
         'TabPage3
         '
@@ -398,6 +453,72 @@ Partial Class settings
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Coming soon..."
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(262, 21)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(25, 13)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "BG:"
+        '
+        'bBG
+        '
+        Me.bBG.BackColor = System.Drawing.Color.White
+        Me.bBG.Enabled = False
+        Me.bBG.ForeColor = System.Drawing.Color.White
+        Me.bBG.Location = New System.Drawing.Point(293, 16)
+        Me.bBG.Name = "bBG"
+        Me.bBG.Size = New System.Drawing.Size(23, 23)
+        Me.bBG.TabIndex = 4
+        Me.bBG.UseVisualStyleBackColor = False
+        '
+        'cdBackColor
+        '
+        Me.cdBackColor.Color = System.Drawing.Color.White
+        '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.GroupBox5)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(364, 218)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Miscellaneous"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label8)
+        Me.GroupBox5.Controls.Add(Me.cbHCharacterLimit)
+        Me.GroupBox5.Location = New System.Drawing.Point(7, 7)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(351, 63)
+        Me.GroupBox5.TabIndex = 0
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Experimental"
+        '
+        'cbHCharacterLimit
+        '
+        Me.cbHCharacterLimit.AutoSize = True
+        Me.cbHCharacterLimit.Location = New System.Drawing.Point(7, 20)
+        Me.cbHCharacterLimit.Name = "cbHCharacterLimit"
+        Me.cbHCharacterLimit.Size = New System.Drawing.Size(250, 17)
+        Me.cbHCharacterLimit.TabIndex = 0
+        Me.cbHCharacterLimit.Text = "Higher Character Limit (from 2B to 2147483647)"
+        Me.cbHCharacterLimit.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(6, 40)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(174, 13)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Use these settings at your own risk!"
+        '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -425,6 +546,9 @@ Partial Class settings
         Me.GroupBox4.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
+        Me.TabPage4.ResumeLayout(False)
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -437,7 +561,6 @@ Partial Class settings
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Label2 As Label
     Friend WithEvents cbFile As CheckBox
@@ -445,7 +568,6 @@ Partial Class settings
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents cbActionBar As CheckBox
     Friend WithEvents Label3 As Label
-    Public WithEvents cbDarkTheme As CheckBox
     Public WithEvents cbView As CheckBox
     Public WithEvents cbEdit As CheckBox
     Public WithEvents cbTools As CheckBox
@@ -458,4 +580,17 @@ Partial Class settings
     Friend WithEvents cbFontSize As ComboBox
     Friend WithEvents Label6 As Label
     Friend WithEvents cbFont As ComboBox
+    Friend WithEvents rbCustom As RadioButton
+    Friend WithEvents rbDarkTheme As RadioButton
+    Friend WithEvents rbStandard As RadioButton
+    Friend WithEvents Label1 As Label
+    Friend WithEvents bFG As Button
+    Friend WithEvents bBG As Button
+    Friend WithEvents Label7 As Label
+    Friend WithEvents cdForeColor As ColorDialog
+    Friend WithEvents cdBackColor As ColorDialog
+    Friend WithEvents TabPage4 As TabPage
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cbHCharacterLimit As CheckBox
 End Class

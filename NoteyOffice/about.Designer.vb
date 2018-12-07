@@ -29,6 +29,7 @@ Partial Class about
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.llMore = New System.Windows.Forms.LinkLabel()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.pbbClose, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -74,27 +75,38 @@ Partial Class about
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(13, 110)
+        Me.Label5.Location = New System.Drawing.Point(12, 143)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(184, 13)
+        Me.Label5.Size = New System.Drawing.Size(178, 13)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Version 1.0.3.1, 29th November 2018"
+        Me.Label5.Text = "Version 1.0.4.0, 7th December 2018"
         '
         'llMore
         '
         Me.llMore.AutoSize = True
-        Me.llMore.Location = New System.Drawing.Point(198, 110)
+        Me.llMore.Location = New System.Drawing.Point(198, 143)
         Me.llMore.Name = "llMore"
         Me.llMore.Size = New System.Drawing.Size(76, 13)
         Me.llMore.TabIndex = 6
         Me.llMore.TabStop = True
         Me.llMore.Text = "More by me :D"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(12, 77)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(178, 52)
+        Me.Label6.TabIndex = 7
+        Me.Label6.Text = "The suite contains:" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- The main word-processor." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- A Web-Browser." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- A tool for e" &
+    "diting raw Rtf (RawEdit)."
+        '
         'about
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(286, 138)
+        Me.ClientSize = New System.Drawing.Size(286, 170)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.llMore)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label3)
@@ -121,4 +133,5 @@ Partial Class about
     Friend WithEvents Label3 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents llMore As LinkLabel
+    Friend WithEvents Label6 As Label
 End Class

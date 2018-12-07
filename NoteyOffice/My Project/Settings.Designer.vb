@@ -56,18 +56,6 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
-        Public Property DarkTheme() As Boolean
-            Get
-                Return CType(Me("DarkTheme"),Boolean)
-            End Get
-            Set
-                Me("DarkTheme") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
         Public Property showEdit() As Boolean
             Get
@@ -147,6 +135,54 @@ Namespace My
             End Get
             Set
                 Me("defaultFontSize") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Black")>  _
+        Public Property uiForeColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("uiForeColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("uiForeColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("White")>  _
+        Public Property uiBackColor() As Global.System.Drawing.Color
+            Get
+                Return CType(Me("uiBackColor"),Global.System.Drawing.Color)
+            End Get
+            Set
+                Me("uiBackColor") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property theme() As Single
+            Get
+                Return CType(Me("theme"),Single)
+            End Get
+            Set
+                Me("theme") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property higherCharacterLimit() As Boolean
+            Get
+                Return CType(Me("higherCharacterLimit"),Boolean)
+            End Get
+            Set
+                Me("higherCharacterLimit") = value
             End Set
         End Property
     End Class

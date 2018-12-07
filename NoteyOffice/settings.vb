@@ -6,41 +6,36 @@ Public Class settings
     End Sub
 
     Private Sub bSave_Click(sender As Object, e As EventArgs) Handles bSave.Click
+
+        bSave.Text = "Please Wait..."
+        Application.DoEvents()
+
         ' Check what settings are enabled/disabled and enable/disable them in the settings cofiguration.
-        If cbDarkTheme.Checked Then
-            My.Settings.DarkTheme = True
-        Else
-            My.Settings.DarkTheme = False
-        End If
 
-        If cbEdit.Checked Then
-            My.Settings.showEdit = True
-        Else
-            My.Settings.showEdit = False
-        End If
+        My.Settings.showEdit = cbEdit.Checked
 
-        If cbView.Checked Then
-            My.Settings.showView = True
-        Else
-            My.Settings.showView = False
-        End If
+        My.Settings.showView = cbView.Checked
 
-        If cbTools.Checked Then
-            My.Settings.showTools = True
-        Else
-            My.Settings.showTools = False
-        End If
+        My.Settings.showTools = cbTools.Checked
 
-        If cbFormattingBar.Checked Then
-            My.Settings.showFormatting = True
-        Else
-            My.Settings.showFormatting = False
-        End If
+        My.Settings.showStatus = cbStatusBar.Checked
 
-        If cbStatusBar.Checked Then
-            My.Settings.showStatus = True
+        My.Settings.showFormatting = cbFormattingBar.Checked
+
+        My.Settings.higherCharacterLimit = cbHCharacterLimit.Checked
+
+        If rbStandard.Checked Then
+            My.Settings.theme = 0
+            My.Settings.uiBackColor = Color.White
+            My.Settings.uiForeColor = Color.Black
+        ElseIf rbDarkTheme.Checked Then
+            My.Settings.theme = 1
+            My.Settings.uiBackColor = Color.Black
+            My.Settings.uiForeColor = Color.White
         Else
-            My.Settings.showStatus = False
+            My.Settings.theme = 2
+            My.Settings.uiBackColor = cdBackColor.Color
+            My.Settings.uiForeColor = cdForeColor.Color
         End If
 
         My.Settings.defaultFont = cbFont.Text
@@ -59,31 +54,53 @@ Public Class settings
         Array.ForEach(fontFamilies, Sub(fontFamily) cbFont.Items.Add(fontFamily.Name))
 
         ' Check which settings are enabled/disabled in the settings configuration and change the UI elements to fit the configuration.
-        If My.Settings.DarkTheme Then
-            cbDarkTheme.Checked = True
+        If My.Settings.theme = 0 Then
+            rbStandard.Checked = True
+        ElseIf My.Settings.theme = 1 Then
+            rbDarkTheme.Checked = True
+        Else
+            rbCustom.Checked = True
         End If
 
-        If Not My.Settings.showEdit Then
-            cbEdit.Checked = False
-        End If
+        cbEdit.Checked = My.Settings.showEdit
 
-        If Not My.Settings.showView Then
-            cbView.Checked = False
-        End If
+        cbView.Checked = My.Settings.showView
 
-        If Not My.Settings.showTools Then
-            cbTools.Checked = False
-        End If
+        cbTools.Checked = My.Settings.showTools
 
-        If Not My.Settings.showFormatting Then
-            cbFormattingBar.Checked = False
-        End If
+        cbFormattingBar.Checked = My.Settings.showFormatting
 
-        If Not My.Settings.showStatus Then
-            cbStatusBar.Checked = False
-        End If
+        cbStatusBar.Checked = My.Settings.showStatus
+
+        cbHCharacterLimit.Checked = My.Settings.higherCharacterLimit
 
         cbFont.Text = My.Settings.defaultFont
         cbFontSize.Text = My.Settings.defaultFontSize
+
+        bBG.BackColor = My.Settings.uiBackColor
+        bFG.BackColor = My.Settings.uiForeColor
+
+        cdBackColor.Color = My.Settings.uiBackColor
+        cdForeColor.Color = My.Settings.uiForeColor
+    End Sub
+
+    Private Sub rbCustom_CheckedChanged(sender As Object, e As EventArgs) Handles rbCustom.CheckedChanged
+        If rbCustom.Checked Then
+            bBG.Enabled = True
+            bFG.Enabled = True
+        Else
+            bBG.Enabled = False
+            bFG.Enabled = False
+        End If
+    End Sub
+
+    Private Sub bFG_Click(sender As Object, e As EventArgs) Handles bFG.Click
+        cdForeColor.ShowDialog()
+        bFG.BackColor = cdForeColor.Color
+    End Sub
+
+    Private Sub bBG_Click(sender As Object, e As EventArgs) Handles bBG.Click
+        cdBackColor.ShowDialog()
+        bBG.BackColor = cdBackColor.Color
     End Sub
 End Class
