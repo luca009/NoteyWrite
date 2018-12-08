@@ -75,6 +75,10 @@ Public Class Form1
         bSettings.ForeColor = My.Settings.uiForeColor
 
         tsFormatting.BackColor = My.Settings.uiBackColor
+        cbFont.BackColor = My.Settings.uiBackColor
+        cbFontSize.BackColor = My.Settings.uiBackColor
+        cbFont.ForeColor = My.Settings.uiForeColor
+        cbFontSize.ForeColor = My.Settings.uiForeColor
 
         ssStatus.BackColor = My.Settings.uiBackColor
         ssStatus.ForeColor = My.Settings.uiForeColor

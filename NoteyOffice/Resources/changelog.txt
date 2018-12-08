@@ -1,3 +1,10 @@
+Changelog for NoteyWrite 1.0.4.2
+-------------------------------------------------------
+- Made some icons better optimized for Dark Theme.
+- Made a better Dark Theme overall.
+- Moved the settings button to the right.
+-------------------------------------------------------
+
 Changelog for NoteyWrite 1.0.4.1
 -------------------------------------------------------
 - Added keyboard shorcuts for common actions.

@@ -354,17 +354,18 @@ Partial Class Form1
         'bWebBrowser
         '
         Me.bWebBrowser.Name = "bWebBrowser"
-        Me.bWebBrowser.Size = New System.Drawing.Size(143, 22)
+        Me.bWebBrowser.Size = New System.Drawing.Size(180, 22)
         Me.bWebBrowser.Text = "Web Browser"
         '
         'bRawEdit
         '
         Me.bRawEdit.Name = "bRawEdit"
-        Me.bRawEdit.Size = New System.Drawing.Size(143, 22)
+        Me.bRawEdit.Size = New System.Drawing.Size(180, 22)
         Me.bRawEdit.Text = "RawEdit"
         '
         'bSettings
         '
+        Me.bSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
         Me.bSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.bSettings.Image = CType(resources.GetObject("bSettings.Image"), System.Drawing.Image)
         Me.bSettings.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -441,6 +442,9 @@ Partial Class Form1
         '
         'cbFontSize
         '
+        Me.cbFontSize.BackColor = System.Drawing.Color.White
+        Me.cbFontSize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbFontSize.ForeColor = System.Drawing.Color.Black
         Me.cbFontSize.Items.AddRange(New Object() {"8", "9", "10", "11", "12", "14", "16", "18", "20", "22", "24", "26", "28", "36", "48", "72", "94", "106"})
         Me.cbFontSize.MaxLength = 3
         Me.cbFontSize.Name = "cbFontSize"
@@ -449,8 +453,12 @@ Partial Class Form1
         '
         'cbFont
         '
+        Me.cbFont.BackColor = System.Drawing.Color.White
+        Me.cbFont.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cbFont.ForeColor = System.Drawing.Color.Black
         Me.cbFont.Name = "cbFont"
         Me.cbFont.Size = New System.Drawing.Size(140, 25)
+        Me.cbFont.Sorted = True
         Me.cbFont.Text = "Microsoft Sans Serif"
         '
         'ToolStripSeparator5
@@ -579,7 +587,7 @@ Partial Class Form1
         Me.lStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.lStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.lStatus.Name = "lStatus"
-        Me.lStatus.Size = New System.Drawing.Size(287, 17)
+        Me.lStatus.Size = New System.Drawing.Size(318, 17)
         Me.lStatus.Spring = True
         Me.lStatus.Text = "None"
         '
@@ -595,13 +603,14 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.4.1"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.4.2"
         '
         'rtbMain
         '
         Me.rtbMain.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rtbMain.Location = New System.Drawing.Point(0, 50)
+        Me.rtbMain.MaxLength = 2000000000
         Me.rtbMain.Name = "rtbMain"
         Me.rtbMain.Size = New System.Drawing.Size(594, 328)
         Me.rtbMain.TabIndex = 7
