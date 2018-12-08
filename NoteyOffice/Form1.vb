@@ -14,7 +14,7 @@ Public Class Form1
     Public isFullscreen As Boolean = False
 
 
-    ' Create a function for toggeling a checked state
+    ' Create a function for toggling a checked state
     Function toggleChecked(ByVal tsb As ToolStripButton)
         tsb.Checked = Not tsb.Checked
     End Function
@@ -269,7 +269,7 @@ Public Class Form1
         lStatus.Text = "Create new document."
     End Sub
 
-    Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs)
+    Private Sub rtbMain_TextChanged(sender As Object, e As EventArgs) Handles rtbMain.TextChanged
         ' If the text gets changed, the isModified variable sets to True
         If Not IsModified Then
             If alreadySaved Then
@@ -538,16 +538,6 @@ Public Class Form1
         lStatus.Text = "Open Find/Replace Dialog."
         FindReplace.Show()
     End Sub
-
-    Protected Overrides Function ProcessCmdKey(ByRef msg As Message, keyData As Keys) As Boolean
-        If keyData = (Keys.Control Or Keys.F) Then
-            FindReplace.Show()
-            lStatus.Text = "Open Find/Replace Dialog. (via Keyboard Shortcut)"
-            Return True
-        End If
-
-        Return MyBase.ProcessCmdKey(msg, keyData)
-    End Function
 
     Private Sub bTColor_Click(sender As Object, e As EventArgs) Handles bTColor.Click
         lStatus.Text = "Open Text Color Dialog."

@@ -123,72 +123,79 @@ Partial Class Form1
         '
         Me.bNew.Image = CType(resources.GetObject("bNew.Image"), System.Drawing.Image)
         Me.bNew.Name = "bNew"
-        Me.bNew.Size = New System.Drawing.Size(142, 22)
+        Me.bNew.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.N), System.Windows.Forms.Keys)
+        Me.bNew.Size = New System.Drawing.Size(195, 22)
         Me.bNew.Text = "New"
         '
         'bOpen
         '
         Me.bOpen.Image = CType(resources.GetObject("bOpen.Image"), System.Drawing.Image)
         Me.bOpen.Name = "bOpen"
-        Me.bOpen.Size = New System.Drawing.Size(142, 22)
+        Me.bOpen.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.O), System.Windows.Forms.Keys)
+        Me.bOpen.Size = New System.Drawing.Size(195, 22)
         Me.bOpen.Text = "Open..."
         '
         'bSave
         '
         Me.bSave.Image = CType(resources.GetObject("bSave.Image"), System.Drawing.Image)
         Me.bSave.Name = "bSave"
-        Me.bSave.Size = New System.Drawing.Size(142, 22)
+        Me.bSave.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.bSave.Size = New System.Drawing.Size(195, 22)
         Me.bSave.Text = "Save"
         '
         'bSaveAs
         '
         Me.bSaveAs.Image = CType(resources.GetObject("bSaveAs.Image"), System.Drawing.Image)
         Me.bSaveAs.Name = "bSaveAs"
-        Me.bSaveAs.Size = New System.Drawing.Size(142, 22)
+        Me.bSaveAs.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.bSaveAs.Size = New System.Drawing.Size(195, 22)
         Me.bSaveAs.Text = "Save As..."
         '
         'ToolStripSeparator1
         '
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(139, 6)
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(192, 6)
         '
         'bPageSetup
         '
         Me.bPageSetup.Name = "bPageSetup"
-        Me.bPageSetup.Size = New System.Drawing.Size(142, 22)
+        Me.bPageSetup.Size = New System.Drawing.Size(195, 22)
         Me.bPageSetup.Text = "Page Setup..."
         '
         'bPrint
         '
         Me.bPrint.Image = CType(resources.GetObject("bPrint.Image"), System.Drawing.Image)
         Me.bPrint.Name = "bPrint"
-        Me.bPrint.Size = New System.Drawing.Size(142, 22)
+        Me.bPrint.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
+        Me.bPrint.Size = New System.Drawing.Size(195, 22)
         Me.bPrint.Text = "Print... "
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(139, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(192, 6)
         '
         'bExit
         '
         Me.bExit.Image = CType(resources.GetObject("bExit.Image"), System.Drawing.Image)
         Me.bExit.Name = "bExit"
-        Me.bExit.Size = New System.Drawing.Size(142, 22)
+        Me.bExit.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
+        Me.bExit.Size = New System.Drawing.Size(195, 22)
         Me.bExit.Text = "Exit"
         '
         'bAbout
         '
         Me.bAbout.Image = CType(resources.GetObject("bAbout.Image"), System.Drawing.Image)
         Me.bAbout.Name = "bAbout"
-        Me.bAbout.Size = New System.Drawing.Size(142, 22)
+        Me.bAbout.Size = New System.Drawing.Size(195, 22)
         Me.bAbout.Text = "About"
         '
         'bChangelog
         '
         Me.bChangelog.Image = CType(resources.GetObject("bChangelog.Image"), System.Drawing.Image)
         Me.bChangelog.Name = "bChangelog"
-        Me.bChangelog.Size = New System.Drawing.Size(142, 22)
+        Me.bChangelog.Size = New System.Drawing.Size(195, 22)
         Me.bChangelog.Text = "Changelog"
         '
         'ddbEdit
@@ -289,27 +296,27 @@ Partial Class Form1
         '
         Me.bZoomOut.Image = CType(resources.GetObject("bZoomOut.Image"), System.Drawing.Image)
         Me.bZoomOut.Name = "bZoomOut"
-        Me.bZoomOut.Size = New System.Drawing.Size(137, 22)
+        Me.bZoomOut.Size = New System.Drawing.Size(199, 22)
         Me.bZoomOut.Text = "Zoom out"
         '
         'bResetZoom
         '
         Me.bResetZoom.Image = CType(resources.GetObject("bResetZoom.Image"), System.Drawing.Image)
         Me.bResetZoom.Name = "bResetZoom"
-        Me.bResetZoom.Size = New System.Drawing.Size(137, 22)
+        Me.bResetZoom.Size = New System.Drawing.Size(199, 22)
         Me.bResetZoom.Text = "Reset Zoom"
         '
         'bZoomIn
         '
         Me.bZoomIn.Image = CType(resources.GetObject("bZoomIn.Image"), System.Drawing.Image)
         Me.bZoomIn.Name = "bZoomIn"
-        Me.bZoomIn.Size = New System.Drawing.Size(137, 22)
+        Me.bZoomIn.Size = New System.Drawing.Size(199, 22)
         Me.bZoomIn.Text = "Zoom in"
         '
         'ToolStripSeparator9
         '
         Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
-        Me.ToolStripSeparator9.Size = New System.Drawing.Size(134, 6)
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(196, 6)
         '
         'bWordWrap
         '
@@ -317,19 +324,21 @@ Partial Class Form1
         Me.bWordWrap.CheckState = System.Windows.Forms.CheckState.Checked
         Me.bWordWrap.Image = CType(resources.GetObject("bWordWrap.Image"), System.Drawing.Image)
         Me.bWordWrap.Name = "bWordWrap"
-        Me.bWordWrap.Size = New System.Drawing.Size(137, 22)
+        Me.bWordWrap.Size = New System.Drawing.Size(199, 22)
         Me.bWordWrap.Text = "Word Wrap"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(134, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(196, 6)
         '
         'bFullscreen
         '
         Me.bFullscreen.Image = CType(resources.GetObject("bFullscreen.Image"), System.Drawing.Image)
         Me.bFullscreen.Name = "bFullscreen"
-        Me.bFullscreen.Size = New System.Drawing.Size(137, 22)
+        Me.bFullscreen.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
+            Or System.Windows.Forms.Keys.F), System.Windows.Forms.Keys)
+        Me.bFullscreen.Size = New System.Drawing.Size(199, 22)
         Me.bFullscreen.Text = "Fullscreen"
         '
         'ddbTools
@@ -570,7 +579,7 @@ Partial Class Form1
         Me.lStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.lStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.lStatus.Name = "lStatus"
-        Me.lStatus.Size = New System.Drawing.Size(318, 17)
+        Me.lStatus.Size = New System.Drawing.Size(287, 17)
         Me.lStatus.Spring = True
         Me.lStatus.Text = "None"
         '
@@ -586,17 +595,16 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.4.0"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.4.1"
         '
         'rtbMain
         '
         Me.rtbMain.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.rtbMain.Dock = System.Windows.Forms.DockStyle.Fill
         Me.rtbMain.Location = New System.Drawing.Point(0, 50)
-        Me.rtbMain.MaxLength = 2000000000
         Me.rtbMain.Name = "rtbMain"
         Me.rtbMain.Size = New System.Drawing.Size(594, 328)
-        Me.rtbMain.TabIndex = 9
+        Me.rtbMain.TabIndex = 7
         Me.rtbMain.Text = ""
         '
         'Form1
