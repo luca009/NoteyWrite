@@ -4,7 +4,6 @@ Imports System.Drawing.Text
 
 Public Class Form1
     ' Dim all the required variables
-    Dim extension As String
     Dim sMsg As String = ""
     Private isInitialized As Boolean
     Public alreadySaved As Boolean = False
@@ -12,6 +11,9 @@ Public Class Form1
     Public currentlyOpen As String
     Private checkPrint As Integer
     Public isFullscreen As Boolean = False
+    Dim plainTextModeEnabled As Boolean
+    Dim isEncrypted As Boolean
+    Private passw As String
 
 
     ' Create a function for toggling a checked state
@@ -44,8 +46,8 @@ Public Class Form1
         For Each sArg As String In My.Application.CommandLineArgs
             sMsg &= sArg & ""
         Next
+
         If Not sMsg = Nothing Then
-            extension = IO.Path.GetExtension(sMsg)
             open(sMsg, rtbMain)
             currentlyOpen = sMsg
             alreadySaved = True
@@ -73,6 +75,7 @@ Public Class Form1
         ddbView.ForeColor = My.Settings.uiForeColor
         ddbTools.ForeColor = My.Settings.uiForeColor
         bSettings.ForeColor = My.Settings.uiForeColor
+        lZoomFactor.ForeColor = My.Settings.uiForeColor
 
         tsFormatting.BackColor = My.Settings.uiBackColor
         cbFont.BackColor = My.Settings.uiBackColor
@@ -103,8 +106,25 @@ Public Class Form1
             ssStatus.Visible = False
         End If
 
+        If Not My.Settings.showZoom Then
+            tsbZoomOut.Visible = False
+            lZoomFactor.Visible = False
+            tsbZoomIn.Visible = False
+            tssZoomSettings.Visible = False
+        End If
+
         If My.Settings.higherCharacterLimit Then
             rtbMain.MaxLength = 2147483647
+        End If
+
+        If My.Settings.keepWindowChanges Then
+            Me.Location = My.Settings.windowPosition
+            Me.Size = My.Settings.windowSize
+            If Not My.Settings.windowMaximized Then
+                Me.WindowState = FormWindowState.Normal
+            ElseIf My.Settings.windowMaximized Then
+                Me.WindowState = FormWindowState.Maximized
+            End If
         End If
 
         cbFont.Text = My.Settings.defaultFont
@@ -121,21 +141,54 @@ Public Class Form1
     End Sub
 
     Public Function open(ByVal file As String, ByVal rtb As RichTextBox)
+        ' Check if file is encrypted by NW
+        Dim fileattr = IO.File.GetAttributes(file)
+        If (fileattr = 1052672) Then
+            isEncrypted = True
+        Else
+            isEncrypted = False
+        End If
+
         ' Check for a valid extension in the file being opened
         If GetExtension(file) = ".txt" Then
             Try
+                If isEncrypted Then
+                    If pass.ShowDialog = DialogResult.OK Then
+                        rtbMain.Text = System.Text.Encoding.UTF8.GetString(Decrypt(pass.pass, IO.File.ReadAllBytes(file)))
+                        passw = pass.pass
+                        plainTextMode(True)
+                    End If
+                    Return True
+                End If
+                plainTextMode(True)
                 rtb.LoadFile(file, RichTextBoxStreamType.PlainText)
             Catch ex As Exception
                 MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         ElseIf GetExtension(file) = ".rtf" Then
             Try
+                If isEncrypted Then
+                    If pass.ShowDialog = DialogResult.OK Then
+                        rtbMain.Rtf = System.Text.Encoding.UTF8.GetString(Decrypt(pass.pass, IO.File.ReadAllBytes(file)))
+                        passw = pass.pass
+                        plainTextMode(False)
+                    End If
+                    Return True
+                End If
+                plainTextMode(False)
                 rtb.LoadFile(file)
             Catch ex As Exception
                 MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
         Else
             Try
+                If isEncrypted Then
+                    If pass.ShowDialog = DialogResult.OK Then
+                        rtbMain.Text = System.Text.Encoding.UTF8.GetString(Decrypt(pass.pass, IO.File.ReadAllBytes(file)))
+                        passw = pass.pass
+                    End If
+                    Return True
+                End If
                 rtb.LoadFile(file, RichTextBoxStreamType.PlainText)
             Catch ex As Exception
                 MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -169,6 +222,14 @@ Public Class Form1
         lStatus.Text = "Saving..."
         If GetExtension(file) = ".txt" Then
             Try
+                If isEncrypted Then
+                    System.IO.File.WriteAllBytes(file, Encrypt(passw, System.Text.Encoding.UTF8.GetBytes(rtbMain.Rtf)))
+                    IO.File.SetAttributes(file, IO.FileAttributes.Archive & IO.FileAttributes.Encrypted)
+                    currentlyOpen = file
+                    alreadySaved = True
+                    IsModified = False
+                    Return True
+                End If
                 rtbMain.SaveFile(file, RichTextBoxStreamType.PlainText)
                 currentlyOpen = file
                 alreadySaved = True
@@ -178,6 +239,14 @@ Public Class Form1
             End Try
         ElseIf GetExtension(file) = ".rtf" Then
             Try
+                If isEncrypted Then
+                    System.IO.File.WriteAllBytes(file, Encrypt(passw, System.Text.Encoding.UTF8.GetBytes(rtbMain.Rtf)))
+                    IO.File.SetAttributes(file, IO.FileAttributes.Archive & IO.FileAttributes.Encrypted)
+                    currentlyOpen = file
+                    alreadySaved = True
+                    IsModified = False
+                    Return True
+                End If
                 rtbMain.SaveFile(file)
                 currentlyOpen = file
                 alreadySaved = True
@@ -187,6 +256,14 @@ Public Class Form1
             End Try
         Else
             Try
+                If isEncrypted Then
+                    System.IO.File.WriteAllBytes(file, Encrypt(passw, System.Text.Encoding.UTF8.GetBytes(rtbMain.Rtf)))
+                    IO.File.SetAttributes(file, IO.FileAttributes.Archive & IO.FileAttributes.Encrypted)
+                    currentlyOpen = file
+                    alreadySaved = True
+                    IsModified = False
+                    Return True
+                End If
                 System.IO.File.WriteAllText(file, rtbMain.Text)
                 currentlyOpen = file
                 alreadySaved = True
@@ -245,6 +322,10 @@ Public Class Form1
     End Sub
 
     Private Sub bExit_Click(sender As Object, e As EventArgs) Handles bExit.Click
+        ' Update the Location and Size of the window in the Settings.
+        My.Settings.windowPosition = Me.Location
+        My.Settings.windowSize = Me.Size
+
         ' Check if the current file has been modified, if so show a dialog asking if the user wants to save their work
         If IsModified Then
             If SaveDialog.ShowDialog() <> DialogResult.Cancel Then
@@ -256,6 +337,15 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Closing(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles MyBase.Closing
+        ' Update the Location and Size of the window in the Settings.
+        My.Settings.windowPosition = Me.Location
+        My.Settings.windowSize = Me.Size
+        If Me.WindowState = FormWindowState.Normal Then
+            My.Settings.windowMaximized = False
+        ElseIf Me.WindowState = FormWindowState.Maximized Then
+            My.Settings.windowMaximized = True
+        End If
+
         ' Check if the current file has been modified, if so show a dialog asking if the user wants to save thier work
         If IsModified Then
             If SaveDialog.ShowDialog() = DialogResult.Cancel Then
@@ -478,6 +568,7 @@ Public Class Form1
         If Not rtbMain.ZoomFactor = 0.5F Then
             rtbMain.ZoomFactor -= 0.5F
             lStatus.Text = "Zoom out."
+            lZoomFactor.Text = rtbMain.ZoomFactor
         End If
     End Sub
 
@@ -486,6 +577,7 @@ Public Class Form1
         If Not rtbMain.ZoomFactor = 10.0F Then
             rtbMain.ZoomFactor += 0.5F
             lStatus.Text = "Zoom in."
+            lZoomFactor.Text = rtbMain.ZoomFactor
         End If
     End Sub
 
@@ -551,7 +643,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub rtbMain_SelectionChanged(sender As Object, e As EventArgs)
+    Private Sub rtbMain_SelectionChanged(sender As Object, e As EventArgs) Handles rtbMain.SelectionChanged
         If rtbMain.SelectionAlignment <> vbNull Then
             ' If statement for the Alignment of the text
             If rtbMain.SelectionAlignment = HorizontalAlignment.Left Then
@@ -621,4 +713,111 @@ Public Class Form1
     Private Sub bSettings_Click(sender As Object, e As EventArgs) Handles bSettings.Click
         settings.Show()
     End Sub
+
+    Private Sub tsbZoomOut_Click(sender As Object, e As EventArgs) Handles tsbZoomOut.Click
+        ' Change the ZoomFactor to zoom out
+        If Not rtbMain.ZoomFactor = 0.5F Then
+            rtbMain.ZoomFactor -= 0.5F
+            lStatus.Text = "Zoom out."
+            lZoomFactor.Text = rtbMain.ZoomFactor
+        End If
+    End Sub
+
+    Private Sub tsbZoomIn_Click(sender As Object, e As EventArgs) Handles tsbZoomIn.Click
+        ' Change the ZoomFactor to zoom in
+        If Not rtbMain.ZoomFactor = 10.0F Then
+            rtbMain.ZoomFactor += 0.5F
+            lStatus.Text = "Zoom in."
+            lZoomFactor.Text = rtbMain.ZoomFactor
+        End If
+    End Sub
+
+    Private Sub lZoomFactor_Click(sender As Object, e As EventArgs) Handles lZoomFactor.Click
+        rtbMain.ZoomFactor = 1
+        lStatus.Text = "Reset Zoom."
+        lZoomFactor.Text = rtbMain.ZoomFactor
+    End Sub
+
+    Private Sub bOpenEncrypted_Click(sender As Object, e As EventArgs) Handles bOpenEncrypted.Click
+        ofdOpen.Title = "Open encrypted document - NoteyWrite"
+        If ofdOpen.ShowDialog = DialogResult.OK Then
+            If pass.ShowDialog = DialogResult.OK Then
+                Try
+                    rtbMain.Rtf = System.Text.Encoding.UTF8.GetString(Decrypt(pass.pass, IO.File.ReadAllBytes(ofdOpen.FileName)))
+                    isEncrypted = True
+                Catch ex As Exception
+                    MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+                pass.pass = ""
+            End If
+        End If
+    End Sub
+
+    Private Sub bSaveAsEncrypted_Click(sender As Object, e As EventArgs) Handles bSaveAsEncrypted.Click
+        Dim str = rtbMain.Rtf
+        If sfdSave.ShowDialog = DialogResult.OK Then
+            If pass.ShowDialog = DialogResult.OK Then
+                Try
+                    System.IO.File.WriteAllBytes(sfdSave.FileName, Encrypt(pass.pass, System.Text.Encoding.UTF8.GetBytes(rtbMain.Rtf)))
+                    IO.File.SetAttributes(sfdSave.FileName, IO.FileAttributes.Archive & IO.FileAttributes.Encrypted)
+                    currentlyOpen = sfdSave.FileName
+                    alreadySaved = True
+                    IsModified = False
+                    isEncrypted = True
+                Catch ex As Exception
+                    MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+                passw = pass.pass
+                pass.pass = ""
+            End If
+        End If
+        ' Dim strDecoded = System.Text.Encoding.UTF8.GetString(Decrypt("muh!", enc))
+    End Sub
+
+    Function Encrypt(password As String, input As Byte()) As Byte()
+        Dim pdb = New System.Security.Cryptography.PasswordDeriveBytes(password, Nothing)
+        Dim ms = New System.IO.MemoryStream()
+        Dim aes = New System.Security.Cryptography.AesManaged()
+        aes.Key = pdb.GetBytes(aes.KeySize / 8)
+        aes.IV = pdb.GetBytes(aes.BlockSize / 8)
+        Dim cs = New System.Security.Cryptography.CryptoStream(ms, aes.CreateEncryptor(), System.Security.Cryptography.CryptoStreamMode.Write)
+        cs.Write(input, 0, input.Length)
+        cs.Close()
+        Return ms.ToArray()
+    End Function
+
+    Function Decrypt(password As String, input As Byte()) As Byte()
+        Dim pdb = New System.Security.Cryptography.PasswordDeriveBytes(password, Nothing)
+        Dim ms = New System.IO.MemoryStream()
+        Dim aes = New System.Security.Cryptography.AesManaged()
+        aes.Key = pdb.GetBytes(aes.KeySize / 8)
+        aes.IV = pdb.GetBytes(aes.BlockSize / 8)
+        Dim cs = New System.Security.Cryptography.CryptoStream(ms, aes.CreateDecryptor(), System.Security.Cryptography.CryptoStreamMode.Write)
+        cs.Write(input, 0, input.Length)
+        cs.Close()
+        Return ms.ToArray()
+    End Function
+
+    Private Sub bPlainTextMode_Click(sender As Object, e As EventArgs) Handles bPlainTextMode.Click
+        plainTextMode(bPlainTextMode.Checked)
+    End Sub
+
+    Function plainTextMode(enable As Boolean)
+        bPlainTextMode.Checked = enable
+        cbFont.Enabled = Not enable
+        cbFontSize.Enabled = Not enable
+        tsbAlignCenter.Enabled = Not enable
+        tsbAlignLeft.Enabled = Not enable
+        tsbAlignRight.Enabled = Not enable
+        tsbBold.Enabled = Not enable
+        tsbItalic.Enabled = Not enable
+        tsbUnderline.Enabled = Not enable
+        tsbStrikethrough.Enabled = Not enable
+        bTColor.Enabled = Not enable
+        bBackColor.Enabled = Not enable
+        rtbMain.Text = rtbMain.Text.ToString
+        rtbMain.SelectAll()
+        rtbMain.SelectionFont = New Font(My.Settings.defaultFont, My.Settings.defaultFontSize)
+        rtbMain.DeselectAll()
+    End Function
 End Class

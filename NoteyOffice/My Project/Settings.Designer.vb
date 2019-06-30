@@ -185,6 +185,66 @@ Namespace My
                 Me("higherCharacterLimit") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property keepWindowChanges() As Boolean
+            Get
+                Return CType(Me("keepWindowChanges"),Boolean)
+            End Get
+            Set
+                Me("keepWindowChanges") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("640, 480")>  _
+        Public Property windowSize() As Global.System.Drawing.Size
+            Get
+                Return CType(Me("windowSize"),Global.System.Drawing.Size)
+            End Get
+            Set
+                Me("windowSize") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("10, 10")>  _
+        Public Property windowPosition() As Global.System.Drawing.Point
+            Get
+                Return CType(Me("windowPosition"),Global.System.Drawing.Point)
+            End Get
+            Set
+                Me("windowPosition") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property windowMaximized() As Boolean
+            Get
+                Return CType(Me("windowMaximized"),Boolean)
+            End Get
+            Set
+                Me("windowMaximized") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property showZoom() As Boolean
+            Get
+                Return CType(Me("showZoom"),Boolean)
+            End Get
+            Set
+                Me("showZoom") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

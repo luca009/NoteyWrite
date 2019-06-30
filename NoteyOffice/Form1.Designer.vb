@@ -27,8 +27,10 @@ Partial Class Form1
         Me.ddbFile = New System.Windows.Forms.ToolStripDropDownButton()
         Me.bNew = New System.Windows.Forms.ToolStripMenuItem()
         Me.bOpen = New System.Windows.Forms.ToolStripMenuItem()
+        Me.bOpenEncrypted = New System.Windows.Forms.ToolStripMenuItem()
         Me.bSave = New System.Windows.Forms.ToolStripMenuItem()
         Me.bSaveAs = New System.Windows.Forms.ToolStripMenuItem()
+        Me.bSaveAsEncrypted = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.bPageSetup = New System.Windows.Forms.ToolStripMenuItem()
         Me.bPrint = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,7 +60,12 @@ Partial Class Form1
         Me.ddbTools = New System.Windows.Forms.ToolStripDropDownButton()
         Me.bWebBrowser = New System.Windows.Forms.ToolStripMenuItem()
         Me.bRawEdit = New System.Windows.Forms.ToolStripMenuItem()
+        Me.bPlainTextMode = New System.Windows.Forms.ToolStripMenuItem()
         Me.bSettings = New System.Windows.Forms.ToolStripButton()
+        Me.tssZoomSettings = New System.Windows.Forms.ToolStripSeparator()
+        Me.tsbZoomIn = New System.Windows.Forms.ToolStripButton()
+        Me.lZoomFactor = New System.Windows.Forms.ToolStripLabel()
+        Me.tsbZoomOut = New System.Windows.Forms.ToolStripButton()
         Me.ofdOpen = New System.Windows.Forms.OpenFileDialog()
         Me.sfdSave = New System.Windows.Forms.SaveFileDialog()
         Me.psdPageSetup = New System.Windows.Forms.PageSetupDialog()
@@ -100,10 +107,10 @@ Partial Class Form1
         'tsTools
         '
         Me.tsTools.BackColor = System.Drawing.Color.White
-        Me.tsTools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ddbFile, Me.ddbEdit, Me.ddbView, Me.ddbTools, Me.bSettings})
+        Me.tsTools.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ddbFile, Me.ddbEdit, Me.ddbView, Me.ddbTools, Me.bSettings, Me.tssZoomSettings, Me.tsbZoomIn, Me.lZoomFactor, Me.tsbZoomOut})
         Me.tsTools.Location = New System.Drawing.Point(0, 0)
         Me.tsTools.Name = "tsTools"
-        Me.tsTools.Size = New System.Drawing.Size(594, 25)
+        Me.tsTools.Size = New System.Drawing.Size(624, 25)
         Me.tsTools.TabIndex = 0
         Me.tsTools.Text = "ToolStrip1"
         '
@@ -111,12 +118,13 @@ Partial Class Form1
         '
         Me.ddbFile.BackColor = System.Drawing.Color.White
         Me.ddbFile.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ddbFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bNew, Me.bOpen, Me.bSave, Me.bSaveAs, Me.ToolStripSeparator1, Me.bPageSetup, Me.bPrint, Me.ToolStripSeparator2, Me.bExit, Me.bAbout, Me.bChangelog})
+        Me.ddbFile.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bNew, Me.bOpen, Me.bOpenEncrypted, Me.bSave, Me.bSaveAs, Me.bSaveAsEncrypted, Me.ToolStripSeparator1, Me.bPageSetup, Me.bPrint, Me.ToolStripSeparator2, Me.bExit, Me.bAbout, Me.bChangelog})
         Me.ddbFile.ForeColor = System.Drawing.Color.Black
         Me.ddbFile.Image = CType(resources.GetObject("ddbFile.Image"), System.Drawing.Image)
         Me.ddbFile.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbFile.Name = "ddbFile"
-        Me.ddbFile.Size = New System.Drawing.Size(38, 22)
+        Me.ddbFile.ShowDropDownArrow = False
+        Me.ddbFile.Size = New System.Drawing.Size(29, 22)
         Me.ddbFile.Text = "File"
         '
         'bNew
@@ -135,6 +143,13 @@ Partial Class Form1
         Me.bOpen.Size = New System.Drawing.Size(195, 22)
         Me.bOpen.Text = "Open..."
         '
+        'bOpenEncrypted
+        '
+        Me.bOpenEncrypted.Image = CType(resources.GetObject("bOpenEncrypted.Image"), System.Drawing.Image)
+        Me.bOpenEncrypted.Name = "bOpenEncrypted"
+        Me.bOpenEncrypted.Size = New System.Drawing.Size(195, 22)
+        Me.bOpenEncrypted.Text = "Open Encrypted..."
+        '
         'bSave
         '
         Me.bSave.Image = CType(resources.GetObject("bSave.Image"), System.Drawing.Image)
@@ -151,6 +166,13 @@ Partial Class Form1
             Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
         Me.bSaveAs.Size = New System.Drawing.Size(195, 22)
         Me.bSaveAs.Text = "Save As..."
+        '
+        'bSaveAsEncrypted
+        '
+        Me.bSaveAsEncrypted.Image = CType(resources.GetObject("bSaveAsEncrypted.Image"), System.Drawing.Image)
+        Me.bSaveAsEncrypted.Name = "bSaveAsEncrypted"
+        Me.bSaveAsEncrypted.Size = New System.Drawing.Size(195, 22)
+        Me.bSaveAsEncrypted.Text = "Save As Encrypted..."
         '
         'ToolStripSeparator1
         '
@@ -205,7 +227,8 @@ Partial Class Form1
         Me.ddbEdit.Image = CType(resources.GetObject("ddbEdit.Image"), System.Drawing.Image)
         Me.ddbEdit.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbEdit.Name = "ddbEdit"
-        Me.ddbEdit.Size = New System.Drawing.Size(40, 22)
+        Me.ddbEdit.ShowDropDownArrow = False
+        Me.ddbEdit.Size = New System.Drawing.Size(31, 22)
         Me.ddbEdit.Text = "Edit"
         '
         'bUndo
@@ -289,7 +312,8 @@ Partial Class Form1
         Me.ddbView.Image = CType(resources.GetObject("ddbView.Image"), System.Drawing.Image)
         Me.ddbView.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbView.Name = "ddbView"
-        Me.ddbView.Size = New System.Drawing.Size(45, 22)
+        Me.ddbView.ShowDropDownArrow = False
+        Me.ddbView.Size = New System.Drawing.Size(36, 22)
         Me.ddbView.Text = "View"
         '
         'bZoomOut
@@ -344,11 +368,12 @@ Partial Class Form1
         'ddbTools
         '
         Me.ddbTools.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ddbTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bWebBrowser, Me.bRawEdit})
+        Me.ddbTools.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bWebBrowser, Me.bRawEdit, Me.bPlainTextMode})
         Me.ddbTools.Image = CType(resources.GetObject("ddbTools.Image"), System.Drawing.Image)
         Me.ddbTools.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbTools.Name = "ddbTools"
-        Me.ddbTools.Size = New System.Drawing.Size(48, 22)
+        Me.ddbTools.ShowDropDownArrow = False
+        Me.ddbTools.Size = New System.Drawing.Size(39, 22)
         Me.ddbTools.Text = "Tools"
         '
         'bWebBrowser
@@ -363,15 +388,57 @@ Partial Class Form1
         Me.bRawEdit.Size = New System.Drawing.Size(180, 22)
         Me.bRawEdit.Text = "RawEdit"
         '
+        'bPlainTextMode
+        '
+        Me.bPlainTextMode.CheckOnClick = True
+        Me.bPlainTextMode.Name = "bPlainTextMode"
+        Me.bPlainTextMode.Size = New System.Drawing.Size(180, 22)
+        Me.bPlainTextMode.Text = "Plain text mode"
+        '
         'bSettings
         '
         Me.bSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
-        Me.bSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.bSettings.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
         Me.bSettings.Image = CType(resources.GetObject("bSettings.Image"), System.Drawing.Image)
         Me.bSettings.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.bSettings.Name = "bSettings"
-        Me.bSettings.Size = New System.Drawing.Size(53, 22)
+        Me.bSettings.Size = New System.Drawing.Size(23, 22)
         Me.bSettings.Text = "Settings"
+        '
+        'tssZoomSettings
+        '
+        Me.tssZoomSettings.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.tssZoomSettings.Name = "tssZoomSettings"
+        Me.tssZoomSettings.Size = New System.Drawing.Size(6, 25)
+        '
+        'tsbZoomIn
+        '
+        Me.tsbZoomIn.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.tsbZoomIn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbZoomIn.Image = CType(resources.GetObject("tsbZoomIn.Image"), System.Drawing.Image)
+        Me.tsbZoomIn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbZoomIn.Name = "tsbZoomIn"
+        Me.tsbZoomIn.Size = New System.Drawing.Size(23, 22)
+        Me.tsbZoomIn.Text = "+"
+        Me.tsbZoomIn.ToolTipText = "Zoom In"
+        '
+        'lZoomFactor
+        '
+        Me.lZoomFactor.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.lZoomFactor.Name = "lZoomFactor"
+        Me.lZoomFactor.Size = New System.Drawing.Size(13, 22)
+        Me.lZoomFactor.Text = "1"
+        '
+        'tsbZoomOut
+        '
+        Me.tsbZoomOut.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right
+        Me.tsbZoomOut.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.tsbZoomOut.Image = CType(resources.GetObject("tsbZoomOut.Image"), System.Drawing.Image)
+        Me.tsbZoomOut.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.tsbZoomOut.Name = "tsbZoomOut"
+        Me.tsbZoomOut.Size = New System.Drawing.Size(23, 22)
+        Me.tsbZoomOut.Text = "-"
+        Me.tsbZoomOut.ToolTipText = "Zoom Out"
         '
         'ofdOpen
         '
@@ -381,7 +448,7 @@ Partial Class Form1
         'sfdSave
         '
         Me.sfdSave.DefaultExt = "rtf"
-        Me.sfdSave.Filter = "Rich text files|*.rtf|Plain text files (*.txt)|*.txt|All files (*.*)|*.*"
+        Me.sfdSave.Filter = "Rich text file|*.rtf|Plain text file (*.txt)|*.txt|All files (*.*)|*.*"
         Me.sfdSave.Title = "Save a document - NoteyWrite"
         '
         'pdPrintD
@@ -395,7 +462,7 @@ Partial Class Form1
         Me.tsFormatting.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsbNew, Me.tsbOpen, Me.tsbSave, Me.tsbSaveAs, Me.ToolStripSeparator4, Me.cbFontSize, Me.cbFont, Me.ToolStripSeparator5, Me.tsbAlignLeft, Me.tsbAlignCenter, Me.tsbAlignRight, Me.ToolStripSeparator6, Me.tsbBold, Me.tsbItalic, Me.tsbUnderline, Me.tsbStrikethrough, Me.ToolStripSeparator11, Me.bTColor, Me.bBackColor})
         Me.tsFormatting.Location = New System.Drawing.Point(0, 25)
         Me.tsFormatting.Name = "tsFormatting"
-        Me.tsFormatting.Size = New System.Drawing.Size(594, 25)
+        Me.tsFormatting.Size = New System.Drawing.Size(624, 25)
         Me.tsFormatting.TabIndex = 2
         Me.tsFormatting.Text = "Formatting"
         '
@@ -568,9 +635,9 @@ Partial Class Form1
         Me.ssStatus.BackColor = System.Drawing.Color.White
         Me.ssStatus.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.ssStatus.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel2, Me.lStatus, Me.lLength, Me.ToolStripStatusLabel1})
-        Me.ssStatus.Location = New System.Drawing.Point(0, 378)
+        Me.ssStatus.Location = New System.Drawing.Point(0, 419)
         Me.ssStatus.Name = "ssStatus"
-        Me.ssStatus.Size = New System.Drawing.Size(594, 22)
+        Me.ssStatus.Size = New System.Drawing.Size(624, 22)
         Me.ssStatus.SizingGrip = False
         Me.ssStatus.TabIndex = 5
         Me.ssStatus.Text = "StatusStrip1"
@@ -587,7 +654,7 @@ Partial Class Form1
         Me.lStatus.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.lStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.lStatus.Name = "lStatus"
-        Me.lStatus.Size = New System.Drawing.Size(318, 17)
+        Me.lStatus.Size = New System.Drawing.Size(348, 17)
         Me.lStatus.Spring = True
         Me.lStatus.Text = "None"
         '
@@ -603,7 +670,7 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.0.4.2"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.1.0.0"
         '
         'rtbMain
         '
@@ -612,7 +679,7 @@ Partial Class Form1
         Me.rtbMain.Location = New System.Drawing.Point(0, 50)
         Me.rtbMain.MaxLength = 2000000000
         Me.rtbMain.Name = "rtbMain"
-        Me.rtbMain.Size = New System.Drawing.Size(594, 328)
+        Me.rtbMain.Size = New System.Drawing.Size(624, 369)
         Me.rtbMain.TabIndex = 7
         Me.rtbMain.Text = ""
         '
@@ -620,7 +687,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(594, 400)
+        Me.ClientSize = New System.Drawing.Size(624, 441)
         Me.Controls.Add(Me.rtbMain)
         Me.Controls.Add(Me.ssStatus)
         Me.Controls.Add(Me.tsFormatting)
@@ -628,6 +695,7 @@ Partial Class Form1
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(400, 160)
         Me.Name = "Form1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.Manual
         Me.Text = "NoteyWrite - Untitled"
         Me.tsTools.ResumeLayout(False)
         Me.tsTools.PerformLayout()
@@ -709,4 +777,11 @@ Partial Class Form1
     Friend WithEvents bWebBrowser As ToolStripMenuItem
     Friend WithEvents bSettings As ToolStripButton
     Friend WithEvents rtbMain As RichTextBoxPrint.RichTextBoxPrintCtrl
+    Friend WithEvents tssZoomSettings As ToolStripSeparator
+    Friend WithEvents tsbZoomIn As ToolStripButton
+    Friend WithEvents lZoomFactor As ToolStripLabel
+    Friend WithEvents tsbZoomOut As ToolStripButton
+    Friend WithEvents bOpenEncrypted As ToolStripMenuItem
+    Friend WithEvents bSaveAsEncrypted As ToolStripMenuItem
+    Friend WithEvents bPlainTextMode As ToolStripMenuItem
 End Class

@@ -1,3 +1,15 @@
+Changelog for NoteyWrite 1.1.0.0
+-------------------------------------------------------
+- NoteyWrite now keeps the location and size of the window.
+- Made a icon for the Settings button.
+- Added quick Zoom buttons.
+- Added en/decryption functionality. (no support for formatting)
+- Added a plain text mode disabling all formatting functions.
+
+Side Note:
+- Update frequency for X.X.X.(1, 2, 3, etc.) will be more frequent, but with just small improvements.
+-------------------------------------------------------
+
 Changelog for NoteyWrite 1.0.4.2
 -------------------------------------------------------
 - Made some icons better optimized for Dark Theme.

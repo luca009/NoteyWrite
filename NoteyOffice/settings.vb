@@ -22,6 +22,8 @@ Public Class settings
 
         My.Settings.showFormatting = cbFormattingBar.Checked
 
+        My.Settings.showZoom = cbZoom.Checked
+
         My.Settings.higherCharacterLimit = cbHCharacterLimit.Checked
 
         If rbStandard.Checked Then
@@ -41,9 +43,17 @@ Public Class settings
         My.Settings.defaultFont = cbFont.Text
         My.Settings.defaultFontSize = cbFontSize.Text
 
+        My.Settings.keepWindowChanges = cbSizeChanges.Checked
+
+
+
+        bSave.Text = "Please Wait..."
+        Application.DoEvents()
         My.Settings.Save()
         Form1.Close()
         Form1.Show()
+        bSave.Text = "Save"
+        Application.DoEvents()
         Me.Close()
     End Sub
 
@@ -72,6 +82,8 @@ Public Class settings
 
         cbStatusBar.Checked = My.Settings.showStatus
 
+        cbZoom.Checked = My.Settings.showZoom
+
         cbHCharacterLimit.Checked = My.Settings.higherCharacterLimit
 
         cbFont.Text = My.Settings.defaultFont
@@ -82,6 +94,8 @@ Public Class settings
 
         cdBackColor.Color = My.Settings.uiBackColor
         cdForeColor.Color = My.Settings.uiForeColor
+
+        cbSizeChanges.Checked = My.Settings.keepWindowChanges
     End Sub
 
     Private Sub rbCustom_CheckedChanged(sender As Object, e As EventArgs) Handles rbCustom.CheckedChanged
@@ -102,5 +116,10 @@ Public Class settings
     Private Sub bBG_Click(sender As Object, e As EventArgs) Handles bBG.Click
         cdBackColor.ShowDialog()
         bBG.BackColor = cdBackColor.Color
+    End Sub
+
+    Private Sub llEditWindowInfo_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles llEditWindowInfo.LinkClicked
+        WindowInformation.Show()
+
     End Sub
 End Class

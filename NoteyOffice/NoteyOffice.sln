@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "NoteyOffice", "NoteyOffice.vbproj", "{DC16EFCE-84B8-41C9-9550-3B745E0C4738}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "NoteyWriteInstaller", "..\NoteyWriteInstaller\NoteyWriteInstaller.vdproj", "{8BB4DD54-6C72-433D-87D3-2C96A37D553B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{DC16EFCE-84B8-41C9-9550-3B745E0C4738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC16EFCE-84B8-41C9-9550-3B745E0C4738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC16EFCE-84B8-41C9-9550-3B745E0C4738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BB4DD54-6C72-433D-87D3-2C96A37D553B}.Debug|Any CPU.ActiveCfg = Debug
+		{8BB4DD54-6C72-433D-87D3-2C96A37D553B}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

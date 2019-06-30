@@ -42,7 +42,9 @@ Partial Class settings
         Me.cbFile = New System.Windows.Forms.CheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.bBG = New System.Windows.Forms.Button()
         Me.bFG = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.rbCustom = New System.Windows.Forms.RadioButton()
         Me.rbDarkTheme = New System.Windows.Forms.RadioButton()
@@ -52,17 +54,19 @@ Partial Class settings
         Me.cbFont = New System.Windows.Forms.ComboBox()
         Me.cbFontSize = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.llEditWindowInfo = New System.Windows.Forms.LinkLabel()
+        Me.cbSizeChanges = New System.Windows.Forms.CheckBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbHCharacterLimit = New System.Windows.Forms.CheckBox()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.bBG = New System.Windows.Forms.Button()
         Me.cdForeColor = New System.Windows.Forms.ColorDialog()
         Me.cdBackColor = New System.Windows.Forms.ColorDialog()
-        Me.TabPage4 = New System.Windows.Forms.TabPage()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
-        Me.cbHCharacterLimit = New System.Windows.Forms.CheckBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbZoom = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -72,9 +76,10 @@ Partial Class settings
         Me.GroupBox1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         Me.SuspendLayout()
         '
         'TableLayoutPanel1
@@ -89,7 +94,7 @@ Partial Class settings
         Me.TableLayoutPanel1.RowCount = 2
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(378, 285)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(378, 280)
         Me.TableLayoutPanel1.TabIndex = 0
         '
         'TableLayoutPanel2
@@ -100,7 +105,7 @@ Partial Class settings
         Me.TableLayoutPanel2.Controls.Add(Me.bCancel, 0, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.bSave, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 253)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 248)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
         Me.TableLayoutPanel2.RowCount = 1
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -138,7 +143,7 @@ Partial Class settings
         Me.TabControl1.Location = New System.Drawing.Point(3, 3)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(372, 244)
+        Me.TabControl1.Size = New System.Drawing.Size(372, 239)
         Me.TabControl1.TabIndex = 1
         '
         'TabPage1
@@ -149,7 +154,7 @@ Partial Class settings
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(364, 218)
+        Me.TabPage1.Size = New System.Drawing.Size(364, 213)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Personalization"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -215,6 +220,7 @@ Partial Class settings
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.cbZoom)
         Me.GroupBox2.Controls.Add(Me.cbSettings)
         Me.GroupBox2.Controls.Add(Me.cbTools)
         Me.GroupBox2.Controls.Add(Me.cbView)
@@ -315,6 +321,17 @@ Partial Class settings
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Theme"
         '
+        'bBG
+        '
+        Me.bBG.BackColor = System.Drawing.Color.White
+        Me.bBG.Enabled = False
+        Me.bBG.ForeColor = System.Drawing.Color.White
+        Me.bBG.Location = New System.Drawing.Point(293, 16)
+        Me.bBG.Name = "bBG"
+        Me.bBG.Size = New System.Drawing.Size(23, 23)
+        Me.bBG.TabIndex = 4
+        Me.bBG.UseVisualStyleBackColor = False
+        '
         'bFG
         '
         Me.bFG.BackColor = System.Drawing.Color.Black
@@ -325,6 +342,15 @@ Partial Class settings
         Me.bFG.Size = New System.Drawing.Size(23, 23)
         Me.bFG.TabIndex = 4
         Me.bFG.UseVisualStyleBackColor = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(262, 21)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(25, 13)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "BG:"
         '
         'Label1
         '
@@ -421,6 +447,82 @@ Partial Class settings
         Me.Label6.TabIndex = 0
         Me.Label6.Text = "Select a default Font:"
         '
+        'TabPage4
+        '
+        Me.TabPage4.Controls.Add(Me.GroupBox6)
+        Me.TabPage4.Controls.Add(Me.GroupBox5)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage4.Name = "TabPage4"
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage4.Size = New System.Drawing.Size(364, 218)
+        Me.TabPage4.TabIndex = 3
+        Me.TabPage4.Text = "Miscellaneous"
+        Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.llEditWindowInfo)
+        Me.GroupBox6.Controls.Add(Me.cbSizeChanges)
+        Me.GroupBox6.Location = New System.Drawing.Point(7, 7)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(351, 136)
+        Me.GroupBox6.TabIndex = 1
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "General"
+        '
+        'llEditWindowInfo
+        '
+        Me.llEditWindowInfo.AutoSize = True
+        Me.llEditWindowInfo.Location = New System.Drawing.Point(223, 21)
+        Me.llEditWindowInfo.Name = "llEditWindowInfo"
+        Me.llEditWindowInfo.Size = New System.Drawing.Size(122, 13)
+        Me.llEditWindowInfo.TabIndex = 1
+        Me.llEditWindowInfo.TabStop = True
+        Me.llEditWindowInfo.Text = "Edit Window Information"
+        '
+        'cbSizeChanges
+        '
+        Me.cbSizeChanges.AutoSize = True
+        Me.cbSizeChanges.Checked = True
+        Me.cbSizeChanges.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbSizeChanges.Location = New System.Drawing.Point(7, 20)
+        Me.cbSizeChanges.Name = "cbSizeChanges"
+        Me.cbSizeChanges.Size = New System.Drawing.Size(203, 17)
+        Me.cbSizeChanges.TabIndex = 0
+        Me.cbSizeChanges.Text = "Keep Window Size/Position Changes"
+        Me.cbSizeChanges.UseVisualStyleBackColor = True
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label8)
+        Me.GroupBox5.Controls.Add(Me.cbHCharacterLimit)
+        Me.GroupBox5.Location = New System.Drawing.Point(6, 149)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(352, 63)
+        Me.GroupBox5.TabIndex = 0
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Experimental"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(6, 40)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(174, 13)
+        Me.Label8.TabIndex = 1
+        Me.Label8.Text = "Use these settings at your own risk!"
+        '
+        'cbHCharacterLimit
+        '
+        Me.cbHCharacterLimit.AutoSize = True
+        Me.cbHCharacterLimit.Location = New System.Drawing.Point(7, 20)
+        Me.cbHCharacterLimit.Name = "cbHCharacterLimit"
+        Me.cbHCharacterLimit.Size = New System.Drawing.Size(250, 17)
+        Me.cbHCharacterLimit.TabIndex = 0
+        Me.cbHCharacterLimit.Text = "Higher Character Limit (from 2B to 2147483647)"
+        Me.cbHCharacterLimit.UseVisualStyleBackColor = True
+        '
         'TabPage2
         '
         Me.TabPage2.Controls.Add(Me.Label5)
@@ -453,77 +555,27 @@ Partial Class settings
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Coming soon..."
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(262, 21)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(25, 13)
-        Me.Label7.TabIndex = 3
-        Me.Label7.Text = "BG:"
-        '
-        'bBG
-        '
-        Me.bBG.BackColor = System.Drawing.Color.White
-        Me.bBG.Enabled = False
-        Me.bBG.ForeColor = System.Drawing.Color.White
-        Me.bBG.Location = New System.Drawing.Point(293, 16)
-        Me.bBG.Name = "bBG"
-        Me.bBG.Size = New System.Drawing.Size(23, 23)
-        Me.bBG.TabIndex = 4
-        Me.bBG.UseVisualStyleBackColor = False
-        '
         'cdBackColor
         '
         Me.cdBackColor.Color = System.Drawing.Color.White
         '
-        'TabPage4
+        'cbZoom
         '
-        Me.TabPage4.Controls.Add(Me.GroupBox5)
-        Me.TabPage4.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(364, 218)
-        Me.TabPage4.TabIndex = 3
-        Me.TabPage4.Text = "Miscellaneous"
-        Me.TabPage4.UseVisualStyleBackColor = True
-        '
-        'GroupBox5
-        '
-        Me.GroupBox5.Controls.Add(Me.Label8)
-        Me.GroupBox5.Controls.Add(Me.cbHCharacterLimit)
-        Me.GroupBox5.Location = New System.Drawing.Point(7, 7)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(351, 63)
-        Me.GroupBox5.TabIndex = 0
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Experimental"
-        '
-        'cbHCharacterLimit
-        '
-        Me.cbHCharacterLimit.AutoSize = True
-        Me.cbHCharacterLimit.Location = New System.Drawing.Point(7, 20)
-        Me.cbHCharacterLimit.Name = "cbHCharacterLimit"
-        Me.cbHCharacterLimit.Size = New System.Drawing.Size(250, 17)
-        Me.cbHCharacterLimit.TabIndex = 0
-        Me.cbHCharacterLimit.Text = "Higher Character Limit (from 2B to 2147483647)"
-        Me.cbHCharacterLimit.UseVisualStyleBackColor = True
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(6, 40)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(174, 13)
-        Me.Label8.TabIndex = 1
-        Me.Label8.Text = "Use these settings at your own risk!"
+        Me.cbZoom.AutoSize = True
+        Me.cbZoom.Checked = True
+        Me.cbZoom.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbZoom.Location = New System.Drawing.Point(292, 37)
+        Me.cbZoom.Name = "cbZoom"
+        Me.cbZoom.Size = New System.Drawing.Size(53, 17)
+        Me.cbZoom.TabIndex = 6
+        Me.cbZoom.Text = "Zoom"
+        Me.cbZoom.UseVisualStyleBackColor = True
         '
         'settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(378, 285)
+        Me.ClientSize = New System.Drawing.Size(378, 280)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -544,11 +596,13 @@ Partial Class settings
         Me.TabPage3.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        Me.TabPage2.ResumeLayout(False)
-        Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -593,4 +647,8 @@ Partial Class settings
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label8 As Label
     Friend WithEvents cbHCharacterLimit As CheckBox
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents cbSizeChanges As CheckBox
+    Friend WithEvents llEditWindowInfo As LinkLabel
+    Friend WithEvents cbZoom As CheckBox
 End Class
