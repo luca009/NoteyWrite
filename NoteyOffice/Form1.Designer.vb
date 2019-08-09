@@ -379,20 +379,20 @@ Partial Class Form1
         'bWebBrowser
         '
         Me.bWebBrowser.Name = "bWebBrowser"
-        Me.bWebBrowser.Size = New System.Drawing.Size(180, 22)
+        Me.bWebBrowser.Size = New System.Drawing.Size(156, 22)
         Me.bWebBrowser.Text = "Web Browser"
         '
         'bRawEdit
         '
         Me.bRawEdit.Name = "bRawEdit"
-        Me.bRawEdit.Size = New System.Drawing.Size(180, 22)
+        Me.bRawEdit.Size = New System.Drawing.Size(156, 22)
         Me.bRawEdit.Text = "RawEdit"
         '
         'bPlainTextMode
         '
         Me.bPlainTextMode.CheckOnClick = True
         Me.bPlainTextMode.Name = "bPlainTextMode"
-        Me.bPlainTextMode.Size = New System.Drawing.Size(180, 22)
+        Me.bPlainTextMode.Size = New System.Drawing.Size(156, 22)
         Me.bPlainTextMode.Text = "Plain text mode"
         '
         'bSettings
@@ -670,7 +670,7 @@ Partial Class Form1
         Me.ToolStripStatusLabel1.BorderStyle = System.Windows.Forms.Border3DStyle.SunkenInner
         Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
         Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(136, 17)
-        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.1.0.0"
+        Me.ToolStripStatusLabel1.Text = "Using NoteyWrite 1.1.0.1"
         '
         'rtbMain
         '

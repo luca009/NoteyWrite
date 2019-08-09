@@ -644,6 +644,7 @@ Public Class Form1
     End Sub
 
     Private Sub rtbMain_SelectionChanged(sender As Object, e As EventArgs) Handles rtbMain.SelectionChanged
+        lStatus.Text = "Selection changed."
         If rtbMain.SelectionAlignment <> vbNull Then
             ' If statement for the Alignment of the text
             If rtbMain.SelectionAlignment = HorizontalAlignment.Left Then
@@ -708,10 +709,12 @@ Public Class Form1
 
     Private Sub bRawEdit_Click(sender As Object, e As EventArgs) Handles bRawEdit.Click
         RawEdit.Show()
+        lStatus.Text = "Open RawEdit."
     End Sub
 
     Private Sub bSettings_Click(sender As Object, e As EventArgs) Handles bSettings.Click
         settings.Show()
+        lStatus.Text = "Open Settings."
     End Sub
 
     Private Sub tsbZoomOut_Click(sender As Object, e As EventArgs) Handles tsbZoomOut.Click
@@ -739,12 +742,15 @@ Public Class Form1
     End Sub
 
     Private Sub bOpenEncrypted_Click(sender As Object, e As EventArgs) Handles bOpenEncrypted.Click
+        lStatus.Text = "Open encrypted document dialog."
         ofdOpen.Title = "Open encrypted document - NoteyWrite"
         If ofdOpen.ShowDialog = DialogResult.OK Then
             If pass.ShowDialog = DialogResult.OK Then
                 Try
+                    lStatus.Text = "Decrypting..."
                     rtbMain.Rtf = System.Text.Encoding.UTF8.GetString(Decrypt(pass.pass, IO.File.ReadAllBytes(ofdOpen.FileName)))
                     isEncrypted = True
+                    lStatus.Text = "Decrypted document."
                 Catch ex As Exception
                     MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try
@@ -754,16 +760,21 @@ Public Class Form1
     End Sub
 
     Private Sub bSaveAsEncrypted_Click(sender As Object, e As EventArgs) Handles bSaveAsEncrypted.Click
+        lStatus.Text = "Save as encrypted document."
         Dim str = rtbMain.Rtf
         If sfdSave.ShowDialog = DialogResult.OK Then
             If pass.ShowDialog = DialogResult.OK Then
                 Try
-                    System.IO.File.WriteAllBytes(sfdSave.FileName, Encrypt(pass.pass, System.Text.Encoding.UTF8.GetBytes(rtbMain.Rtf)))
+                    lStatus.Text = "Encrypting..."
+                    Dim rtf As String
+                    rtf = rtbMain.Rtf
+                    System.IO.File.WriteAllBytes(sfdSave.FileName, Encrypt(pass.pass, System.Text.Encoding.UTF8.GetBytes(rtf)))
                     IO.File.SetAttributes(sfdSave.FileName, IO.FileAttributes.Archive & IO.FileAttributes.Encrypted)
                     currentlyOpen = sfdSave.FileName
                     alreadySaved = True
                     IsModified = False
                     isEncrypted = True
+                    lStatus.Text = "Saved encrypted document."
                 Catch ex As Exception
                     MessageBox.Show("Unexpected Error! Description: " & ex.Message, "NoteyWrite - Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End Try

@@ -1,3 +1,9 @@
+Changelog for NoteyWrite 1.1.0.1
+-------------------------------------------------------
+- Encrypting documents with formatting is now supported.
+- More information for "Last Action"
+-------------------------------------------------------
+
 Changelog for NoteyWrite 1.1.0.0
 -------------------------------------------------------
 - NoteyWrite now keeps the location and size of the window.

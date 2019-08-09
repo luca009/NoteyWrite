@@ -78,9 +78,9 @@ Partial Class about
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(12, 143)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(168, 13)
+        Me.Label5.Size = New System.Drawing.Size(162, 13)
         Me.Label5.TabIndex = 5
-        Me.Label5.Text = "Version 1.1.0.0, 30th August 2019"
+        Me.Label5.Text = "Version 1.1.0.0, 9th August 2019"
         '
         'llMore
         '
