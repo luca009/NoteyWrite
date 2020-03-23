@@ -34,14 +34,15 @@ Partial Class changelog
         Me.tbMain.Name = "tbMain"
         Me.tbMain.ReadOnly = True
         Me.tbMain.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.tbMain.Size = New System.Drawing.Size(463, 316)
+        Me.tbMain.Size = New System.Drawing.Size(464, 441)
         Me.tbMain.TabIndex = 0
+        Me.tbMain.WordWrap = False
         '
         'changelog
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(463, 316)
+        Me.ClientSize = New System.Drawing.Size(464, 441)
         Me.Controls.Add(Me.tbMain)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

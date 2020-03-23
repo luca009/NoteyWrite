@@ -64,7 +64,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Logo.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -239,7 +240,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Logo.ico" />
     <None Include="Resources\changelog.txt" />
   </ItemGroup>
   <ItemGroup>

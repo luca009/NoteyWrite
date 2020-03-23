@@ -26,6 +26,7 @@ Partial Class pass
         Me.tbPass = New System.Windows.Forms.TextBox()
         Me.bGo = New System.Windows.Forms.Button()
         Me.cbShowPassword = New System.Windows.Forms.CheckBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'tbPass
@@ -56,11 +57,22 @@ Partial Class pass
         Me.cbShowPassword.Text = "Show Password"
         Me.cbShowPassword.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(12, 65)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(183, 13)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Note: Formatting is not yet supported!"
+        '
         'pass
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(248, 72)
+        Me.ClientSize = New System.Drawing.Size(248, 85)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cbShowPassword)
         Me.Controls.Add(Me.bGo)
         Me.Controls.Add(Me.tbPass)
@@ -78,4 +90,5 @@ Partial Class pass
     Friend WithEvents tbPass As TextBox
     Friend WithEvents bGo As Button
     Friend WithEvents cbShowPassword As CheckBox
+    Friend WithEvents Label1 As Label
 End Class

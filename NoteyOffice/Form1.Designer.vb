@@ -373,26 +373,26 @@ Partial Class Form1
         Me.ddbTools.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ddbTools.Name = "ddbTools"
         Me.ddbTools.ShowDropDownArrow = False
-        Me.ddbTools.Size = New System.Drawing.Size(39, 22)
+        Me.ddbTools.Size = New System.Drawing.Size(38, 22)
         Me.ddbTools.Text = "Tools"
         '
         'bWebBrowser
         '
         Me.bWebBrowser.Name = "bWebBrowser"
-        Me.bWebBrowser.Size = New System.Drawing.Size(156, 22)
+        Me.bWebBrowser.Size = New System.Drawing.Size(157, 22)
         Me.bWebBrowser.Text = "Web Browser"
         '
         'bRawEdit
         '
         Me.bRawEdit.Name = "bRawEdit"
-        Me.bRawEdit.Size = New System.Drawing.Size(156, 22)
+        Me.bRawEdit.Size = New System.Drawing.Size(157, 22)
         Me.bRawEdit.Text = "RawEdit"
         '
         'bPlainTextMode
         '
         Me.bPlainTextMode.CheckOnClick = True
         Me.bPlainTextMode.Name = "bPlainTextMode"
-        Me.bPlainTextMode.Size = New System.Drawing.Size(156, 22)
+        Me.bPlainTextMode.Size = New System.Drawing.Size(157, 22)
         Me.bPlainTextMode.Text = "Plain text mode"
         '
         'bSettings

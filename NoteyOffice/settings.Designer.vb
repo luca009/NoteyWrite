@@ -35,6 +35,7 @@ Partial Class settings
         Me.cbStatusBar = New System.Windows.Forms.CheckBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.cbZoom = New System.Windows.Forms.CheckBox()
         Me.cbSettings = New System.Windows.Forms.CheckBox()
         Me.cbTools = New System.Windows.Forms.CheckBox()
         Me.cbView = New System.Windows.Forms.CheckBox()
@@ -66,7 +67,6 @@ Partial Class settings
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cdForeColor = New System.Windows.Forms.ColorDialog()
         Me.cdBackColor = New System.Windows.Forms.ColorDialog()
-        Me.cbZoom = New System.Windows.Forms.CheckBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -233,6 +233,18 @@ Partial Class settings
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Menus"
+        '
+        'cbZoom
+        '
+        Me.cbZoom.AutoSize = True
+        Me.cbZoom.Checked = True
+        Me.cbZoom.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.cbZoom.Location = New System.Drawing.Point(292, 37)
+        Me.cbZoom.Name = "cbZoom"
+        Me.cbZoom.Size = New System.Drawing.Size(53, 17)
+        Me.cbZoom.TabIndex = 6
+        Me.cbZoom.Text = "Zoom"
+        Me.cbZoom.UseVisualStyleBackColor = True
         '
         'cbSettings
         '
@@ -402,7 +414,7 @@ Partial Class settings
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(364, 218)
+        Me.TabPage3.Size = New System.Drawing.Size(364, 213)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Defaults"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -454,7 +466,7 @@ Partial Class settings
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(364, 218)
+        Me.TabPage4.Size = New System.Drawing.Size(364, 213)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Miscellaneous"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -530,7 +542,7 @@ Partial Class settings
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(364, 218)
+        Me.TabPage2.Size = New System.Drawing.Size(364, 213)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Coming soon..."
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -542,8 +554,8 @@ Partial Class settings
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(252, 39)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "But don't worry!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NoteyWrite is being actively developed by luca009, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and these " &
-    "settings will come VERY soon." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.Label5.Text = "But don't worry!" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "NoteyWrite is being actively developed by luca009, " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "and more s" &
+    "ettings will come VERY soon." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label4
         '
@@ -558,18 +570,6 @@ Partial Class settings
         'cdBackColor
         '
         Me.cdBackColor.Color = System.Drawing.Color.White
-        '
-        'cbZoom
-        '
-        Me.cbZoom.AutoSize = True
-        Me.cbZoom.Checked = True
-        Me.cbZoom.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.cbZoom.Location = New System.Drawing.Point(292, 37)
-        Me.cbZoom.Name = "cbZoom"
-        Me.cbZoom.Size = New System.Drawing.Size(53, 17)
-        Me.cbZoom.TabIndex = 6
-        Me.cbZoom.Text = "Zoom"
-        Me.cbZoom.UseVisualStyleBackColor = True
         '
         'settings
         '

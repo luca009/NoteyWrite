@@ -24,16 +24,16 @@ Partial Class RawEdit
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RawEdit))
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
-        Me.bMainRaw = New System.Windows.Forms.ToolStripButton()
-        Me.tbRaw = New System.Windows.Forms.TextBox()
+        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.bImport = New System.Windows.Forms.ToolStripMenuItem()
+        Me.bExport = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.bClose = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.bMainRaw = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripLabel1 = New System.Windows.Forms.ToolStripLabel()
         Me.bRawMain = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.bExport = New System.Windows.Forms.ToolStripMenuItem()
-        Me.bImport = New System.Windows.Forms.ToolStripMenuItem()
-        Me.bClose = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.tbRaw = New System.Windows.Forms.TextBox()
         Me.ofdOpen = New System.Windows.Forms.OpenFileDialog()
         Me.sfdSave = New System.Windows.Forms.SaveFileDialog()
         Me.ToolStrip1.SuspendLayout()
@@ -49,6 +49,44 @@ Partial Class RawEdit
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "Tools"
         '
+        'ToolStripDropDownButton1
+        '
+        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bImport, Me.bExport, Me.ToolStripSeparator2, Me.bClose})
+        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
+        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(38, 22)
+        Me.ToolStripDropDownButton1.Text = "File"
+        '
+        'bImport
+        '
+        Me.bImport.Name = "bImport"
+        Me.bImport.Size = New System.Drawing.Size(170, 22)
+        Me.bImport.Text = "Import from TXT..."
+        '
+        'bExport
+        '
+        Me.bExport.Name = "bExport"
+        Me.bExport.Size = New System.Drawing.Size(170, 22)
+        Me.bExport.Text = "Export as TXT..."
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(167, 6)
+        '
+        'bClose
+        '
+        Me.bClose.Name = "bClose"
+        Me.bClose.Size = New System.Drawing.Size(170, 22)
+        Me.bClose.Text = "Close"
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
+        '
         'bMainRaw
         '
         Me.bMainRaw.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
@@ -57,20 +95,6 @@ Partial Class RawEdit
         Me.bMainRaw.Name = "bMainRaw"
         Me.bMainRaw.Size = New System.Drawing.Size(142, 22)
         Me.bMainRaw.Text = "Sync from Main Window"
-        '
-        'tbRaw
-        '
-        Me.tbRaw.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tbRaw.Location = New System.Drawing.Point(0, 25)
-        Me.tbRaw.Multiline = True
-        Me.tbRaw.Name = "tbRaw"
-        Me.tbRaw.Size = New System.Drawing.Size(484, 336)
-        Me.tbRaw.TabIndex = 1
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
         '
         'ToolStripLabel1
         '
@@ -90,38 +114,14 @@ Partial Class RawEdit
         Me.bRawMain.Size = New System.Drawing.Size(127, 22)
         Me.bRawMain.Text = "Sync to Main Window"
         '
-        'ToolStripDropDownButton1
+        'tbRaw
         '
-        Me.ToolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.bImport, Me.bExport, Me.ToolStripSeparator2, Me.bClose})
-        Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
-        Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(38, 22)
-        Me.ToolStripDropDownButton1.Text = "File"
-        '
-        'bExport
-        '
-        Me.bExport.Name = "bExport"
-        Me.bExport.Size = New System.Drawing.Size(180, 22)
-        Me.bExport.Text = "Export as TXT..."
-        '
-        'bImport
-        '
-        Me.bImport.Name = "bImport"
-        Me.bImport.Size = New System.Drawing.Size(180, 22)
-        Me.bImport.Text = "Import from TXT..."
-        '
-        'bClose
-        '
-        Me.bClose.Name = "bClose"
-        Me.bClose.Size = New System.Drawing.Size(180, 22)
-        Me.bClose.Text = "Close"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(177, 6)
+        Me.tbRaw.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tbRaw.Location = New System.Drawing.Point(0, 25)
+        Me.tbRaw.Multiline = True
+        Me.tbRaw.Name = "tbRaw"
+        Me.tbRaw.Size = New System.Drawing.Size(484, 336)
+        Me.tbRaw.TabIndex = 1
         '
         'ofdOpen
         '
